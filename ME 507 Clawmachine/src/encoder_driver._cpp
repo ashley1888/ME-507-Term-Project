@@ -5,23 +5,28 @@
  */
 #include <Arduino.h>
 #include <PrintStream.h>
-#include "motor_driver.h"
+#include "encoder_driver.h"
 
 /** @brief   Cr
  * 
  *  @details This
  */
 
-MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep )
+
+EncoderDriver::EncoderDriver (uint8_t pin1, uint8_t pin2, uint8_t pinpower, uint8_t pinground)
 //pin1, pin2, nsleep
-{  _nsleep = nsleep;
+{  _pinpower = pinpower;
+   _pinground = pinground; 
    _pin1 = pin1;
    _pin2 = pin2;
+   
 
 
     pinMode(pin1, OUTPUT); 
     pinMode(pin2, OUTPUT); 
-    pinMode(nsleep, OUTPUT); 
+    pinMode(pinpower, OUTPUT); 
+    pinMode(pinground, OUTPUT); 
+    
     //pinMode(nfault, INPUT_PULLUP) -- MAKE FUNCT FOR WHEN LOGIC LOW IT KNOWS IT FAULT AND SETS MOTOR TO DISABLE
 
     //uint8_t pin1;
@@ -29,20 +34,14 @@ MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep )
           //The number of data points
 }
 
-void MotorDriver::enable (void)
+
+
+void EncoderDriver::update (void)
 {   
+    oldposition=0;
+    position=0;
+    
     //_nsleep.high();
-     digitalWrite(_nsleep, HIGH);
-}
+    // digitalWrite(_nsleep, HIGH);
 
-void MotorDriver::disable (void)
-{   
-    digitalWrite(_nsleep, LOW);
 }
-
-void MotorDriver::setduty (uint8_t duty)
-{   
-    analogWrite(_pin1, duty);
-}
-
-   //analogWrite(PB0, 75);  

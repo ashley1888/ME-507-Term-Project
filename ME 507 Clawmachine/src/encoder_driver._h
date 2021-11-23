@@ -16,20 +16,26 @@
  */
 
 #include <Arduino.h>
-class MotorDriver
+class EncoderDriver
 {
 protected:
     /// The number of points in the data set
     uint32_t pinstatus;
-    uint8_t _nsleep;
+    uint8_t _pinpower;
+    uint8_t _pinground;
     uint8_t _pin1;
     uint8_t _pin2;
+    uint8_t position;
+    uint8_t oldposition;
+    uint8_t currentposition;
+    uint8_t period;
+    uint8_t delta;
+
     
     
  
  public:
-   MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep );
-   void enable (void);
-   void disable (void);
-   void setduty (uint8_t duty); // Constructor 
+   EncoderDriver::EncoderDriver (uint8_t pin1, uint8_t pin2, uint8_t pinpower, uint8_t pinground);
+   void update (void);
+   
 };
