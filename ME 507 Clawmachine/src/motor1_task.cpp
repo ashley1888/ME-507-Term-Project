@@ -23,10 +23,20 @@
  */
 
 
+MotorDriver object1( 5, 6, 8); //not the correct pins -- also not sure whether the object should be created in main instead
 
 void task_move_motor (void* p_params)
 {
-    if (share_encoder_positionx != queue_data 
+    if (share_encoder_positionx != share_user_positionx) 
+    {
+     object1.setduty(35);
+    }
+    else 
+    { object1.setduty(0);
+    }
+}
+
+    
     // set up code goes here
 // check encoder val, if correct spot stop spinning otherwise continue setduty funct
 // set up shares to get encoder values 

@@ -43,7 +43,7 @@ void task_read_encoders (void* p_params)
             << ", Timer Y: " << (int16_t)(timer_Y.getCount ())
             << "      \r";
 
-        //extern Share<uint16_t> share_encoder_positionx(timer_X.getCount()) 
+        //extern Share<uint16_t> share_encoder_positionx(timer_X.getCount())  this line is wrong cuz it gives errors 
         // extern Share<uint16_t> share_encoder_positiony(timer_Y.getCount()) 
     }
 
