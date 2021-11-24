@@ -12,3 +12,6 @@
 void encoder_task (void* p_params);
 
 #endif // _ENCODER_TASK_H_
+
+// Ridgley didnt have a .h file for encoder task but I just made this one cuz i thought all tasks need 
+// to have one so im not sure if this will cause an error or not 

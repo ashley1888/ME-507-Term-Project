@@ -11,6 +11,8 @@
  * 
  *  @author JR Ridgely
  *  @date   2020-Nov-15 Original file
+ * 
+ * link to ridgley file
  * https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp
  */
 

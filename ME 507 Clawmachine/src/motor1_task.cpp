@@ -27,12 +27,17 @@ MotorDriver object1( 5, 6, 8); //not the correct pins -- also not sure whether t
 
 void task_move_motor (void* p_params)
 {
-    if (share_encoder_positionx != share_user_positionx) 
+    if (share_encoder_positionx != share_user_positionx) //when making other motor task use shares for y since that is for the other encoder
     {
      object1.setduty(35);
+
     }
     else 
     { object1.setduty(0);
+      delay (1000);
+      object1.setduty(-35);
+      // need to add part where it checks its returned to its orgin
+    // then sends the share bool that the job is completed 
     }
 }
 

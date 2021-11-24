@@ -1,4 +1,4 @@
-/** @file encoder_task.cpp
+/** @file controller_task.cpp
  *    This file contains code to test a class for using encoders on STM32's in
  *    the Arduino environment.
  * 
@@ -15,7 +15,7 @@
 #include <STM32FreeRTOS.h>
 
 
-#include "encoder_counter.h"
+#include "controller_task.h"
 
 //extern Share<uint16_t> share_encoder_positionx;
 //extern Share<uint16_t> share_encoder_positiony;
@@ -25,29 +25,26 @@
  *           class.
  *  @param   p_params A pointer, which is ignored, to no parameters
  */
-void task_read_encoders (void* p_params)
+void task_control (void* p_params)
 {
     // Pointers to timer/counters used; could be in a task function
     //uint16_t share_data;
-    Serial << "Initializing timers...";
-    STM32Encoder timer_X (TIM3, PB4, PB5);
-    STM32Encoder timer_Y (TIM8, PC6, PC7);
-    Serial << "done." << endl;
+    uint8_t user_x; 
+    cout << "Input X position";  // shows this is the common way to prompt user for input on opensource forums so idk why the error
+    cin >> user_x;
+
+    uint8_t user_y; 
+    cout << "Input X position";  // shows this is the common way to prompt user for input on opensource forums so idk why the error
+    cin >> user_y;
 
 // make shares but in comments 
     for (;;)
     {
         delay (100);
 
-        Serial << "Timer X: " << (int16_t)(timer_X.getCount ()) 
-            << ", Timer Y: " << (int16_t)(timer_Y.getCount ())
-            << "      \r";
-
-        extern Share<uint16_t> share_encoder_positionx(timer_X.getCount()); // this line is wrong 
-        extern Share<uint16_t> share_encoder_positiony(timer_Y.getCount); //also wrong i was trying to see how to set the share = to a value
-        extern Share<uint16_t> share_encoder_positiony(getCount); // sadly still wrong 
-
-
+        extern Share<uint16_t> share_user_positionx(user_x);
+         // this line is wrong 
+        extern Share<uint16_t> share_user_positiony(user_y);
     }
 
 }
@@ -59,14 +56,13 @@ void setup (void)
 {
     Serial.begin (115200);
     delay (1000);
-    Serial << "\033[2JTimer/Counter Test in Encoder Mode" << endl;
 
     // Create the task that tests the encoder interface class
-    xTaskCreate (task_read_encoders,     // Task function
-                 "Encoders",             // Name in diagnostic printouts
+    xTaskCreate (task_control     // Task function
+                 "Control",             // Name in diagnostic printouts
                  1000,                   // Stack size in bytes
                  NULL,                   // Parameters for task function
-                 5,                      // Task priority
+                 3,                      // Task priority
                  NULL);                  // Handle to task struct
 
     // STM32duino requires that the FreeRTOS scheduler be manually started
