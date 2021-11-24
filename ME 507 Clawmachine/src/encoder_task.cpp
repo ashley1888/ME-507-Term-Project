@@ -14,8 +14,11 @@
 #include <PrintStream.h>
 #include <STM32FreeRTOS.h>
 
-//#include "encoder3.h"
+
 #include "encoder_counter.h"
+
+//extern Share<uint16_t> share_encoder_positionx;
+//extern Share<uint16_t> share_encoder_positiony;
 
 
 /** @brief   Task which tests the reading of encoders using the @c STM32Encoder
@@ -25,11 +28,13 @@
 void task_read_encoders (void* p_params)
 {
     // Pointers to timer/counters used; could be in a task function
+    //uint16_t share_data;
     Serial << "Initializing timers...";
     STM32Encoder timer_X (TIM3, PB4, PB5);
     STM32Encoder timer_Y (TIM8, PC6, PC7);
     Serial << "done." << endl;
 
+// make shares but in comments 
     for (;;)
     {
         delay (100);
@@ -37,7 +42,11 @@ void task_read_encoders (void* p_params)
         Serial << "Timer X: " << (int16_t)(timer_X.getCount ()) 
             << ", Timer Y: " << (int16_t)(timer_Y.getCount ())
             << "      \r";
+
+        //extern Share<uint16_t> share_encoder_positionx(timer_X.getCount()) 
+        // extern Share<uint16_t> share_encoder_positiony(timer_Y.getCount()) 
     }
+
 }
 
 
