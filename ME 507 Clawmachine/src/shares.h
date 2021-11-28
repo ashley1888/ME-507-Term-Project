@@ -24,6 +24,8 @@ extern Share<uint16_t> share_user_positionx; // will be from controller.cpp fron
 
 extern Share<uint16_t> share_user_positiony;
 
+extern Share<uint16_t>share_job_status;
+
 // A queue which triggers a task to print the count at certain times
 //extern Queue<uint16_t> data_queue;
 

@@ -36,14 +36,28 @@ void task_move_motor (void* p_params)
     if (usergivenx != currentencoderx) // if the current encoder position isnt equal to the user desired than do the following
     //when making other motor task use shares for y since that is for the other encoder
     {
-     object1.setduty(35);
+     object1.setduty(35); // keep moving
 
     }
     else 
-    { object1.setduty(0);
-      delay (1000);
-      object1.setduty(-35);
-      // need to add part where it checks its returned to its orgin
+    { object1.setduty(0); // stop
+      delay (1000); // wait
+      object1.setduty(-35); // reverse direction
+      if (currentencoderx!= 0)// want to keep reversing direction until encoders at origin position again 
+      {
+          object1.setduty(-35);
+      }
+      else
+        {
+         object1.setduty(0); 
+         uint8_t jobstatus = 1; // job is complete
+         
+         share_job_status.put(jobstatus); // put number 1 into share variable to send to main
+
+        }
+    }
+      //  it checks if its returned to its orgin
+
     // then sends the share bool that the job is completed 
     }
 }
@@ -72,7 +86,7 @@ void setup (void)
 
     // Create the task that tests the encoder interface class
     xTaskCreate (task_move_motor,     // Task function
-                 "Motor",             // Name in diagnostic printouts
+                 "Motorx",             // Name in diagnostic printouts
                  1000,                   // Stack size in bytes
                  NULL,                   // Parameters for task function
                  6,                      // Task priority

@@ -15,7 +15,8 @@
 Share<uint16_t> share_encoder_positionx; 
 Share<uint16_t> share_encoder_positiony;
 Share<uint16_t> share_user_positionx;
-Share<uint16_t> share_user_positiony
+Share<uint16_t> share_user_positiony;
+Share<uint16_t> share_job_status;
 
 
 /** @brief   Arduino setup function which runs once at program startup.
@@ -30,10 +31,19 @@ void setup() {
   MotorDriver object1( PB10, PC7, PB3) ;
   object1.enable();
   object1.setduty(0);
-  delay(5000);
+  delay(10000);
   object1.disable();
 
+  uint8_t currentjobstatus;
+  share_job_status.get(usergivenx);
+  if share_job_status == 1
+  {
+   Serial.println("Item has been picked and dropped.");
 
+  }
+
+
+// need to add the other tasks, and make this iterate
 
 
   //object1.set_duty( high or low or duty level? );
