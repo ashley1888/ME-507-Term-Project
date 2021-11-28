@@ -9,7 +9,13 @@
 #include <Arduino.h>
 #include <PrintStream.h>
 #include <motor_driver.h>
+#include "taskshare.h"
 
+
+Share<uint16_t> share_encoder_positionx; 
+Share<uint16_t> share_encoder_positiony;
+Share<uint16_t> share_user_positionx;
+Share<uint16_t> share_user_positiony
 
 
 /** @brief   Arduino setup function which runs once at program startup.

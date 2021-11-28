@@ -27,7 +27,14 @@ MotorDriver object1( 5, 6, 8); //not the correct pins -- also not sure whether t
 
 void task_move_motor (void* p_params)
 {
-    if (share_encoder_positionx != share_user_positionx) //when making other motor task use shares for y since that is for the other encoder
+    uint16_t usergivenx;
+    share_user_positionx.get(usergivenx);
+
+    uint16_t currentencoderx;
+    share_encoder_positionx.get(currentencoderx);
+
+    if (usergivenx != currentencoderx) // if the current encoder position isnt equal to the user desired than do the following
+    //when making other motor task use shares for y since that is for the other encoder
     {
      object1.setduty(35);
 

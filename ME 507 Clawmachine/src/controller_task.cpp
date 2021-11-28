@@ -16,6 +16,7 @@
 
 
 #include "controller_task.h"
+#include "shares.h"
 
 //extern Share<uint16_t> share_encoder_positionx;
 //extern Share<uint16_t> share_encoder_positiony;
@@ -41,10 +42,8 @@ void task_control (void* p_params)
     for (;;)
     {
         delay (100);
-
-        extern Share<uint16_t> share_user_positionx(user_x);
-         // this line is wrong 
-        extern Share<uint16_t> share_user_positiony(user_y);
+        share_user_positionx.put(user_x);  // putting the users input value into the share 
+        share_user_positiony.put(user_y);
     }
 
 }

@@ -16,6 +16,7 @@
 
 
 #include "encoder_counter.h"
+#include "shares.h"
 
 //extern Share<uint16_t> share_encoder_positionx;
 //extern Share<uint16_t> share_encoder_positiony;
@@ -43,10 +44,13 @@ void task_read_encoders (void* p_params)
             << ", Timer Y: " << (int16_t)(timer_Y.getCount ())
             << "      \r";
 
-        extern Share<uint16_t> share_encoder_positionx(timer_X.getCount()); // this line is wrong 
-        extern Share<uint16_t> share_encoder_positiony(timer_Y.getCount); //also wrong i was trying to see how to set the share = to a value
-        extern Share<uint16_t> share_encoder_positiony(getCount); // sadly still wrong 
+        uint16_t timerx;
+        timerx = timer_X.getCount ();
+        share_encoder_positionx.put(timerx);
 
+        uint16_t timery;
+        timery = timer_Y.getCount ();
+        share_encoder_positiony.put(timery);
 
     }
 

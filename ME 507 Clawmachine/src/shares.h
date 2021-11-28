@@ -12,7 +12,8 @@
 
 //#include "encoder_counter.h"
 //#include "motor_driver.h"
-#include "taskshare.h"// im not sure about this but in ridgley simple shares canvas ex he had this so i emailed him and am waiting
+#include "taskshare.h"// need this here - its his file on github that allows shares but for some reason the lib depends in platform io isnt working
+// Example of shares in depth at https://spluttflob.github.io/ME507-Support/classShare.html
 
 // A share which holds a counter of how many times a simulated event occurred
 extern Share<uint16_t> share_encoder_positionx;
