@@ -9,8 +9,13 @@
 #include <Arduino.h>
 #include <PrintStream.h>
 #include <motor_driver.h>
-#include "taskshare.h"
 
+#if (defined STM32L4xx || defined STM32F4xx)
+    #include <STM32FreeRTOS.h>
+#endif
+#include "taskshare.h"
+#include "shares.h"
+#include "controller_task.h"
 
 Share<uint16_t> share_encoder_positionx; 
 Share<uint16_t> share_encoder_positiony;
@@ -27,6 +32,17 @@ void setup() {
   // put your setup code here, to run once:
   Serial.begin (115200);
   delay (6000);
+
+  xTaskCreate (task_control     // Task function
+                 "Control",             // Name in diagnostic printouts
+                 1000,                   // Stack size in bytes
+                 NULL,                   // Parameters for task function
+                 8,                      // Task priority
+                 NULL);                  // Handle to task struct
+
+    // STM32duino requires that the FreeRTOS scheduler be manually started
+    vTaskStartScheduler ();
+
   //MotorDriver object1( 24, 23, 70) ;
   MotorDriver object1( PB10, PC7, PB3) ;
   object1.enable();
@@ -34,9 +50,12 @@ void setup() {
   delay(10000);
   object1.disable();
 
-  uint8_t currentjobstatus;
-  share_job_status.get(usergivenx);
-  if share_job_status == 1
+
+  uint16_t currentjobstatus;
+  share_job_status.get(currentjobstatus);
+  
+  uint16_t one = 1;
+  if (currentjobstatus == one )
   {
    Serial.println("Item has been picked and dropped.");
 

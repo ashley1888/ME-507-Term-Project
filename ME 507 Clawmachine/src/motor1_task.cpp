@@ -39,14 +39,15 @@ void task_move_motor (void* p_params)
      object1.setduty(35); // keep moving
 
     }
+
     else 
     { object1.setduty(0); // stop
       delay (1000); // wait
       object1.setduty(-35); // reverse direction
       if (currentencoderx!= 0)// want to keep reversing direction until encoders at origin position again 
-      {
+        {
           object1.setduty(-35);
-      }
+        }
       else
         {
          object1.setduty(0); 
@@ -54,13 +55,13 @@ void task_move_motor (void* p_params)
          
          share_job_status.put(jobstatus); // put number 1 into share variable to send to main
 
-        }
-    }
+         }
+     }
       //  it checks if its returned to its orgin
 
     // then sends the share bool that the job is completed 
-    }
-}
+     }
+ }
 
     
     // set up code goes here

@@ -9,6 +9,6 @@
 #ifndef _CONTROLLER_TASK_H_
 #define _CONTROLLER_TASK_H_
 
-void controller_task (void* p_params);
+void task_control (void* p_params);
 
 #endif // _CONTROLLER_TASK_H_
