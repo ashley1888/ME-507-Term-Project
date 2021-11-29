@@ -33,7 +33,7 @@ void setup() {
   Serial.begin (115200);
   delay (6000);
 
-  xTaskCreate (task_control     // Task function
+  xTaskCreate (task_control,     // Task function
                  "Control",             // Name in diagnostic printouts
                  1000,                   // Stack size in bytes
                  NULL,                   // Parameters for task function

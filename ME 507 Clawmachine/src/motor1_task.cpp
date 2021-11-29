@@ -33,6 +33,9 @@ void task_move_motor (void* p_params)
     uint16_t currentencoderx;
     share_encoder_positionx.get(currentencoderx);
 
+    
+    // error begins in this section
+
     if (usergivenx != currentencoderx) // if the current encoder position isnt equal to the user desired than do the following
     //when making other motor task use shares for y since that is for the other encoder
     {
@@ -56,13 +59,14 @@ void task_move_motor (void* p_params)
          share_job_status.put(jobstatus); // put number 1 into share variable to send to main
 
          }
-     }
+     
       //  it checks if its returned to its orgin
 
     // then sends the share bool that the job is completed 
      }
- }
 
+ }
+// error ends in this section 
     
     // set up code goes here
 // check encoder val, if correct spot stop spinning otherwise continue setduty funct
