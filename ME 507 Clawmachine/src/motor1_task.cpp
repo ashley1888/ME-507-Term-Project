@@ -34,7 +34,7 @@ void task_move_motor (void* p_params)
     share_encoder_positionx.get(currentencoderx);
 
     
-    // error begins in this section
+    
 
     if (usergivenx != currentencoderx) // if the current encoder position isnt equal to the user desired than do the following
     //when making other motor task use shares for y since that is for the other encoder
@@ -42,7 +42,7 @@ void task_move_motor (void* p_params)
      object1.setduty(35); // keep moving
 
     }
-
+// error below
     else 
     { object1.setduty(0); // stop
       delay (1000); // wait
@@ -66,7 +66,7 @@ void task_move_motor (void* p_params)
      }
 
  }
-// error ends in this section 
+
     
     // set up code goes here
 // check encoder val, if correct spot stop spinning otherwise continue setduty funct
