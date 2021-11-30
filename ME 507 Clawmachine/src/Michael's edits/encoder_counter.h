@@ -45,7 +45,7 @@ public:
     /** @brief   Return the current position count from the timer.
      *  @returns The value in the timer's count register
      */
-    uint16_t getCount (void)
+    int32_t getCount (void)
     {
         return p_timer->getCount ();
     }
