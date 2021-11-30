@@ -13,7 +13,7 @@
 #include <STM32FreeRTOS.h>
 
 // #include "shares.h"
-// #include "motor_driver.h"
+#include "motor_driver.h"
 #include "encoder_counter.h"
 #include "X_Motor_Task.h"
 
@@ -75,16 +75,28 @@
 
 void task_x_motor (void* p_params)
 {
+    uint32_t X_position = 0;
+
     // Pointers to timer/counters used; could be in a task function
     Serial << "Initializing timers...";
-    // MotorDriver X_motor(PA0, PA1, PB3); // not sure if sleep pin is correct
-    STM32Encoder X_encoder(TIM2, PA0, PA1);
+    MotorDriver X_motor(PA0, PA1, PB3); // not sure if sleep pin is correct
+    STM32Encoder X_encoder(TIM3, PB4, PB5);
     Serial << "done." << endl;
 
-    for (;;)
-    {
+    X_motor.enable();
+    X_motor.setduty(100); //turn on at max
+
+    for (;;){
         delay (500);
 
-        Serial << "Timer X: " << X_encoder.getCount() << endl;
+        X_position = X_encoder.getCount();
+
+        Serial << "My current position is: " << X_encoder.getCount() << endl;        
+
+        if (X_position = 1000000){ // spin til encoder 1,000,000
+
+          // X_motor.setduty(0);
+          X_motor.disable();
+        }
     }
 }
