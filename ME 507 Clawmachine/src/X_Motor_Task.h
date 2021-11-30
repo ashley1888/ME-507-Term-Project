@@ -1,4 +1,4 @@
-/** @file controller_task.h
+/** @file motor1_task.h
  *  This file contains code for a task which records data somewhat quickly.
  * 
  *  @author JR Ridgely
@@ -6,9 +6,9 @@
  *  @copyright (c) 2021 by JR Ridgely, released under the LGPL 3.0. 
  */
 
-#ifndef _CONTROLLER_TASK_H_
-#define _CONTROLLER_TASK_H_
+#ifndef _MOTOR1_TASK_H_
+#define _MOTOR1_TASK_H_
 
-void task_control (void* p_params);
+void task_x_motor (void* p_params);
 
-#endif // _CONTROLLER_TASK_H_
+#endif // _MOTOR1_TASK_H_

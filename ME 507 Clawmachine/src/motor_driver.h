@@ -28,7 +28,7 @@ protected:
     
  
  public:
-   MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep );
+   MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep);
    void enable (void);
    void disable (void);
    void setduty (uint8_t duty); // Constructor 
