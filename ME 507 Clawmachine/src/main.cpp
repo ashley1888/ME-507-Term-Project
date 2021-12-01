@@ -35,13 +35,12 @@ void setup()
   Serial.begin(115200);
   delay(1500);
 
-  xTaskCreate(task_controller // Task function
-              "Control",      // Name in diagnostic printouts
-              1000,           // Stack size in bytes
-              NULL,           // Parameters for task function
-              1,              // Task priority
-              NULL);          // Handle to task struct
-
+  xTaskCreate(task_controller, // Task function
+              "Control",       // Name in diagnostic printouts
+              1000,            // Stack size in bytes
+              NULL,            // Parameters for task function
+              1,               // Task priority
+              NULL);           // Handle to task struct
   xTaskCreate(task_x_motor, // Task function
               "X_Motor",    // Name in diagnostic printouts
               1000,         // Stack size in bytes
