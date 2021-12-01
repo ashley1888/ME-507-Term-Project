@@ -37,7 +37,7 @@
 // // error below
 //     else 
 //     { object1.setduty(0); // stop
-//       delay (1000); // wait
+//       delay (power0); // wait
 //       object1.setduty(-35); // reverse direction
 //       if (currentencoderx!= 0)// want to keep reversing direction until encoders at origin position again 
 //         {
@@ -66,7 +66,7 @@
 
 //     for (;;)
 //     {
-//         delay (100);
+//         delay (power);
 
         
 //     }
@@ -82,22 +82,25 @@ void task_x_motor (void* p_params)
     Serial << "done." << endl;
 
     delay(1500);
-    // X_motor.enable();
-    X_motor.setduty(100); //turn on at max
+    X_motor.enable();
+
+    int8_t power = 100;
+    
+    X_motor.setduty(power); //turn on at max
 
     for (;;){
         delay (500);
 
-        // Serial << "My X position is: " << X_encoder.getCount() << endl;        
+        Serial << "My X position is: " << X_encoder.getCount() << endl;        
 
         if (X_encoder.getCount() >= 5000){ // spin til encoder 65,535
 
-          X_motor.setduty(-100);
+          X_motor.setduty(-power);
           // X_motor.disable();
         }
         if (X_encoder.getCount() <= 500){ // spin til encoder 65,535
 
-          X_motor.setduty(100);
+          X_motor.setduty(power);
           // X_motor.disable();
         }
     }

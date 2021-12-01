@@ -86,11 +86,10 @@ void task_y_motor (void* p_params)
 
     int8_t power = 100;
 
-
     Y_motor.setduty(power); //turn on at max
 
     for (;;){
-        delay (100);
+        delay (500);
 
         Serial << "My Y position is: " << Y_encoder.getCount() << endl;        
 

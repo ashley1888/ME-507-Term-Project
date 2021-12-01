@@ -16,6 +16,8 @@
  */
 
 #include <Arduino.h>
+#include <PrintStream.h>
+
 class MotorDriver
 {
 protected:

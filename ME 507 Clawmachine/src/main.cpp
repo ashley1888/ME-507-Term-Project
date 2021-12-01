@@ -8,7 +8,6 @@
  */
 #include <Arduino.h>
 #include <PrintStream.h>
-// #include <motor_driver.h>
 
 #if (defined STM32L4xx || defined STM32F4xx)
     #include <STM32FreeRTOS.h>
@@ -17,7 +16,6 @@
 // #include "shares.h"
 #include "X_Motor_Task.h"
 #include "Y_Motor_Task.h"
-// #include "Y_Motor_Task.h"
 
 // Share<uint16_t> share_encoder_positionx; 
 // Share<uint16_t> share_encoder_positiony;
@@ -69,6 +67,5 @@ void setup() {
   // }
 
 }
-
 void loop() {
 }
