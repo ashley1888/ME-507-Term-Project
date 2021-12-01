@@ -36,7 +36,7 @@ void task_controller(void *p_params)
         if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
         {
             uint16_t num_read_x = Serial.read();  // not sure on this variables identifier type
-            share_user_positionx.put(num_read_x); // putting the users input value into the share
+            // share_user_positionx.put(num_read_x); // putting the users input value into the share
         }
 
         delay(5000);
@@ -44,7 +44,7 @@ void task_controller(void *p_params)
         if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
         {
             uint16_t num_read_y = Serial.read(); // not sure on this variables identifier type
-            share_user_positiony.put(num_read_y);
+            // share_user_positiony.put(num_read_y);
             // share_user_positionx.put(num_read_x);  // putting the users input value into the share
             // share_user_positiony.put(user_y);
         }

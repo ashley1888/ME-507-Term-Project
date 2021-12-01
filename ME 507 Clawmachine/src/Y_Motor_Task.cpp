@@ -46,16 +46,17 @@ void task_y_motor(void *p_params)
     //     Y_motor.setduty(power); // Y_motor.disable();
     //   }
     // }
-    if (Y_encoder.getCount() < share_user_positionx.get())
-    {
-    }
-    else if (Y_encoder.getCount() > share_user_positionx.get())
-    {
-      Y_motor.setduty(-100);
-    }
-    else
-    {
-      Y_motor.setduty(0);
-    }
+
+    // if (Y_encoder.getCount() < share_user_positionx.get())
+    // {
+    // }
+    // else if (Y_encoder.getCount() > share_user_positionx.get())
+    // {
+    //   Y_motor.setduty(-100);
+    // }
+    // else
+    // {
+    //   Y_motor.setduty(0);
+    // }
   }
 }
