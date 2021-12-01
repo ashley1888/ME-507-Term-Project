@@ -20,7 +20,7 @@ void task_Z_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
   Serial << "Initializing Z motor...";
-  // MotorDriver Z_motor(PB10, PC7, PB3);
+  MotorDriver Z_motor(PB9, PB8, PB3);
   Serial << "done." << endl;
 
   delay(1500);
