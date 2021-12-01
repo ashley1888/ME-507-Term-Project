@@ -18,31 +18,26 @@ MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep )
    _pin1 = pin1;
    _pin2 = pin2;
 
-
-    pinMode(pin1, OUTPUT); 
-    pinMode(pin2, OUTPUT); 
-    pinMode(nsleep, OUTPUT); 
+    pinMode(_pin1, OUTPUT); 
+    pinMode(_pin2, OUTPUT); 
+    pinMode(_nsleep, OUTPUT); 
     //pinMode(nfault, INPUT_PULLUP) -- MAKE FUNCT FOR WHEN LOGIC LOW IT KNOWS IT FAULT AND SETS MOTOR TO DISABLE
-
-    //uint8_t pin1;
-    // sets initial values for class variables
-          //The number of data points
 }
-
-void MotorDriver::enable (void)
-{   
-    //_nsleep.high();
+void MotorDriver::enable (void){   
      digitalWrite(_nsleep, HIGH);
 }
-
-void MotorDriver::disable (void)
-{   
+void MotorDriver::disable (void){   
     digitalWrite(_nsleep, LOW);
 }
-
-void MotorDriver::setduty (uint8_t duty)
-{   
-    analogWrite(_pin1, duty);
+void MotorDriver::setduty (int8_t duty){   
+    if (duty >= 0){
+        digitalWrite(_pin1, HIGH);
+        digitalWrite(_pin2, LOW);
+        analogWrite(_pin1, duty);
+    }
+    if (duty <= 0){
+        digitalWrite(_pin1, LOW);
+        digitalWrite(_pin2, HIGH);
+        analogWrite(_pin1, -duty);
+    }    
 }
-
-   //analogWrite(PB0, 75);  

@@ -24,12 +24,9 @@ protected:
     uint8_t _nsleep;
     uint8_t _pin1;
     uint8_t _pin2;
-    
-    
- 
  public:
    MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep);
    void enable (void);
    void disable (void);
-   void setduty (uint8_t duty); // Constructor 
+   void setduty (int8_t duty); // Constructor 
 };

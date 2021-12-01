@@ -16,6 +16,7 @@
 // #include "taskshare.h"
 // #include "shares.h"
 #include "X_Motor_Task.h"
+#include "Y_Motor_Task.h"
 // #include "Y_Motor_Task.h"
 
 // Share<uint16_t> share_encoder_positionx; 
@@ -31,10 +32,16 @@
 void setup() {
   // put your setup code here, to run once:
   Serial.begin (115200);
-  delay (500);
+  delay (1500);
 
   xTaskCreate (task_x_motor,     // Task function
               "X_Motor",             // Name in diagnostic printouts
+              1000,                   // Stack size in bytes
+              NULL,                   // Parameters for task function
+              5,                      // Task priority
+              NULL);                  // Handle to task struct
+  xTaskCreate (task_y_motor,     // Task function
+              "Y_Motor",             // Name in diagnostic printouts
               1000,                   // Stack size in bytes
               NULL,                   // Parameters for task function
               5,                      // Task priority

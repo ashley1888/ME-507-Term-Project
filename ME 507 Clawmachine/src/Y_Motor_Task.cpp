@@ -15,7 +15,7 @@
 // #include "shares.h"
 #include "motor_driver.h"
 #include "encoder_counter.h"
-#include "X_Motor_Task.h"
+#include "Y_Motor_Task.h"
 
 // void task_move_motor (void* p_params)
 // {
@@ -73,32 +73,36 @@
 // }
 
 
-void task_x_motor (void* p_params)
+void task_y_motor (void* p_params)
 {
     // Pointers to timer/counters used; could be in a task function
-    Serial << "Initializing X motor and encoder...";
-    MotorDriver X_motor(PA0, PA1, PB3);
-    STM32Encoder X_encoder(TIM3, PB4, PB5);
+    Serial << "Initializing Y motor and encoder...";
+    MotorDriver Y_motor(PB10, PC7, PB3);
+    STM32Encoder Y_encoder(TIM1, PA8, PA9);
     Serial << "done." << endl;
 
     delay(1500);
-    // X_motor.enable();
-    X_motor.setduty(100); //turn on at max
+    Y_motor.enable();
+
+    int8_t power = 100;
+
+
+    Y_motor.setduty(power); //turn on at max
 
     for (;;){
-        delay (500);
+        delay (100);
 
-        // Serial << "My X position is: " << X_encoder.getCount() << endl;        
+        Serial << "My Y position is: " << Y_encoder.getCount() << endl;        
 
-        if (X_encoder.getCount() >= 5000){ // spin til encoder 65,535
+        if (Y_encoder.getCount() >= 5000){ // spin til encoder 65,535
 
-          X_motor.setduty(-100);
-          // X_motor.disable();
+          Y_motor.setduty(-power);
+          // Y_motor.disable();
         }
-        if (X_encoder.getCount() <= 500){ // spin til encoder 65,535
+        if (Y_encoder.getCount() <= 500){ // spin til encoder 65,535
 
-          X_motor.setduty(100);
-          // X_motor.disable();
+          Y_motor.setduty(power);
+          // Y_motor.disable();
         }
     }
 }

@@ -6,9 +6,9 @@
  *  @copyright (c) 2021 by JR Ridgely, released under the LGPL 3.0. 
  */
 
-#ifndef _MOTORX_TASK_H_
-#define _MOTORX_TASK_H_
+#ifndef _MOTORY_TASK_H_
+#define _MOTORY_TASK_H_
 
-void task_x_motor (void* p_params);
+void task_y_motor (void* p_params);
 
-#endif // _MOTORX_TASK_H_
+#endif // _MOTORY_TASK_H_
