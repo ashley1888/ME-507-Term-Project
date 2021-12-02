@@ -29,8 +29,20 @@
  */
 void task_controller(void *p_params)
 {
+    uint16_t task_done = 1;
     for (;;)
     {
+        if (task_done == 1); 
+        
+        {
+            if (Serial.available() > 0)  // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+                { 
+                uint16_t numbervalx = Serial.parseInt(); 
+                uint16_t listx=+ numbervalx;
+                
+                //Serial.print(listx);
+                
+                
         // delay(5000);
         // Serial.print("Input x location: ");
         // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
@@ -50,7 +62,8 @@ void task_controller(void *p_params)
         // }
 
 
-        queue_x_position.put(2000);
+             queue_x_position.put(listx);
+             task_done= 0;
         // share_gripper_job_status.get();
 
     }
