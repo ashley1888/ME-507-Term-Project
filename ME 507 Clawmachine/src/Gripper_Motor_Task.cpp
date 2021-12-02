@@ -20,7 +20,7 @@ void task_gripper_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
   Serial << "Initializing Gripper motor...";
-  MotorDriver Gripper_motor(PB6, PA5, PB3);
+  MotorDriver Gripper_motor(PB6, PA5, PB3, PA10);
   Serial << "done." << endl;
 
   delay(1500);

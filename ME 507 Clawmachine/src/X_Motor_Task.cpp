@@ -22,7 +22,7 @@ void task_x_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
   Serial << "Initializing X motor and encoder...";
-  MotorDriver X_motor(PA0, PA1, PB3);
+  MotorDriver X_motor(PA0, PA1, PB3, PA10);
   STM32Encoder X_encoder(TIM3, PB4, PB5);
   Serial << "done." << endl;
 
@@ -48,25 +48,25 @@ void task_x_motor(void *p_params)
     // Serial << "My X position is: " << X_encoder.getCount() << endl;
     if (X_encoder.getCount() == user_x)
     {
-      X_motor.setduty(0);
+      // X_motor.setduty(0);
       X_motor.disable();
     }
-    else if (X_encoder.getCount() < user_x && X_encoder.getCount() - user_x > 0)
+    else if (X_encoder.getCount() < user_x)
     {
       if (user_x - X_encoder.getCount() < 50)
       {
-        X_motor.setduty(power / 2);
+        X_motor.setduty(power/8);
       }
       else
       {
         X_motor.setduty(power);
       }
     }
-    else if (X_encoder.getCount() > user_x && X_encoder.getCount() > user_x > 0)
+    else if (X_encoder.getCount() > user_x)
     {
       if (X_encoder.getCount() - user_x > 50)
       {
-        X_motor.setduty(-power / 2);
+        X_motor.setduty(-power/8);
       }
       else
       {

@@ -22,7 +22,7 @@ void task_y_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
   Serial << "Initializing Y motor and encoder...";
-  MotorDriver Y_motor(PB10, PC7, PB3);
+  MotorDriver Y_motor(PB10, PC7, PB3, PA10);
   STM32Encoder Y_encoder(TIM1, PA8, PA9);
   Serial << "done." << endl;
 
