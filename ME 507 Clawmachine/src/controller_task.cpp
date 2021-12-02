@@ -29,19 +29,20 @@
  */
 void task_controller(void *p_params)
 {
-    uint16_t task_done = 1;
+    uint16_t x_task_done = 1;
+    uint16_t y_task_done = 1;
+    uint16_t z_task_done = 1;
+    uint16_t gripper_task_done = 1;
+
     for (;;)
     {
-        if (task_done == 1)
+        if (x_task_done && y_task_done && z_task_done && gripper_task_done)
         {
-            if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+            if (1) // Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
             {
-                uint16_t numbervalx = Serial.parseInt();
-                uint16_t listx = +numbervalx;
-
                 // Serial.print(listx);
 
-                // delay(5000);
+                
                 // Serial.print("Input x location: ");
                 // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
                 // {
@@ -59,20 +60,26 @@ void task_controller(void *p_params)
                 //     // share_user_positiony.put(user_y);
                 // }
 
-                // queue_x_position.put(listx);
-                share_x_position.put(listx);
-                Serial << listx << endl;
+                // delay(5000);
+                // uint16_t numbervalx = Serial.parseInt();
+                // uint16_t listx = +numbervalx;
+                // share_x_position.put(listx);
 
-                delay(5000);
-                uint16_t numbervaly = Serial.parseInt();
-                uint16_t lisyx = +numbervaly;
-                share_y_position.put(listy);
-                Serial << listy << endl;
+                // delay(5000);
+                // uint16_t numbervaly = Serial.parseInt();
+                // uint16_t listy = +numbervaly;
+                // share_y_position.put(listy);
 
 
-                task_done = 0;
-                // share_gripper_job_status.get();
+                share_x_position.put(5000);
+                share_y_position.put(5000);       
             }
+            share_x_job_status.get(x_task_done);
+            share_y_job_status.get(y_task_done);
+            share_z_job_status.get(z_task_done);
+            share_gripper_job_status.get(gripper_task_done);
+            Serial << "i got past" << endl;
+            Serial << x_task_done << " " << y_task_done << endl;
         }
     }
 }

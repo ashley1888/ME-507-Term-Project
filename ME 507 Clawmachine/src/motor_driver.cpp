@@ -54,6 +54,8 @@ void MotorDriver::setduty (int8_t duty){
     }
     if(duty == 0)
     {
+        digitalWrite(_pin1, LOW);
+        digitalWrite(_pin2, LOW);
         analogWrite(_pin1, duty);
     }
 }

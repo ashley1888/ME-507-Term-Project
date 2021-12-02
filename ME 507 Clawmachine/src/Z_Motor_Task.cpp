@@ -14,8 +14,6 @@
 #include "motor_driver.h"
 #include "Z_Motor_Task.h"
 
-// extern Share<uint16_t> share_user_positionz;
-
 void task_z_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
@@ -23,26 +21,19 @@ void task_z_motor(void *p_params)
   MotorDriver Z_motor(PB9, PB8, PB3, PA10);
   Serial << "done." << endl;
 
-  delay(1500);
   Z_motor.enable();
 
-  int8_t power = 100;
-
-  Z_motor.setduty(power); // turn on at max
+  uint32_t time = 5000;
 
   for (;;)
   {
-    delay(1000);
-    // if (Z_encoder.getCount() < share_user_positionx.get()) // calculate how long to leave motor on to reach location
-    // {
-    // }
-    // else if (Z_encoder.getCount() > share_user_positionx.get())
-    // {
-    //   Z_motor.setduty(-100);
-    // }
-    // else
-    // {
-    //   Z_motor.setduty(0);
-    // }
+    queue_x_task.get();
+    queue_y_task.get();
+    
+    Z_motor.setduty(100);
+    delay(time);
+    queue_z_task.put(1);
+    share_z_job_status.put(1);
+    Z_motor.setduty(0);
   }
 }
