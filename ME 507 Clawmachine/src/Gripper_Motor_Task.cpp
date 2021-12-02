@@ -33,6 +33,6 @@ void task_gripper_motor(void *p_params)
     delay(time);
     Gripper_motor.setduty(-100);
     share_gripper_job_status.put(1);
-    Gripper_motor.disable(0); //Gripper_motor.setduty(0);
+    Gripper_motor.setduty(0);
   }
 }
