@@ -21,11 +21,12 @@
 #include "Z_Motor_Task.h"
 #include "Gripper_Motor_Task.h"
 
-Queue<uint16_t> queue_x_position(1, "X_Input");
-Queue<uint16_t> queue_y_position(1, "Y_Input");
+Queue<uint16_t> queue_x_task(1, "X_Status");
+Queue<uint16_t> queue_y_task(1, "Y_Status");
+Queue<uint16_t> queue_z_task(1, "Z_Status");
 
 Share<uint16_t> share_x_position;
-
+Share<uint16_t> share_y_position;
 Share<uint16_t> share_x_job_status;
 Share<uint16_t> share_y_job_status;
 Share<uint16_t> share_z_job_status;
@@ -45,32 +46,32 @@ void setup()
               "Control",          // Name in diagnostic printouts
               1000,               // Stack size in bytes
               NULL,               // Parameters for task function
-              1,                  // Task priority
+              2,                  // Task priority
               NULL);              // Handle to task struct
   xTaskCreate(task_x_motor,       // Task function
               "X_Motor",          // Name in diagnostic printouts
               1000,               // Stack size in bytes
               NULL,               // Parameters for task function
-              2,                  // Task priority
+              1,                  // Task priority
               NULL);              // Handle to task struct
-  // xTaskCreate(task_y_motor,       // Task function
-  //             "Y_Motor",          // Name in diagnostic printouts
-  //             1000,               // Stack size in bytes
-  //             NULL,               // Parameters for task function
-  //             2,                  // Task priority
-  //             NULL);              // Handle to task struct
-  // xTaskCreate(task_z_motor,       // Task function
-  //             "Z_Motor",          // Name in diagnostic printouts
-  //             1000,               // Stack size in bytes
-  //             NULL,               // Parameters for task function
-  //             2,                  // Task priority
-  //             NULL);              // Handle to task struct
-  // xTaskCreate(task_gripper_motor, // Task function
-  //             "Gripper_Motor",    // Name in diagnostic printouts
-  //             1000,               // Stack size in bytes
-  //             NULL,               // Parameters for task function
-  //             2,                  // Task priority
-  //             NULL);              // Handle to task struct
+  xTaskCreate(task_y_motor,       // Task function
+              "Y_Motor",          // Name in diagnostic printouts
+              1000,               // Stack size in bytes
+              NULL,               // Parameters for task function
+              1,                  // Task priority
+              NULL);              // Handle to task struct
+  xTaskCreate(task_z_motor,       // Task function
+              "Z_Motor",          // Name in diagnostic printouts
+              1000,               // Stack size in bytes
+              NULL,               // Parameters for task function
+              1,                  // Task priority
+              NULL);              // Handle to task struct
+  xTaskCreate(task_gripper_motor, // Task function
+              "Gripper_Motor",    // Name in diagnostic printouts
+              1000,               // Stack size in bytes
+              NULL,               // Parameters for task function
+              1,                  // Task priority
+              NULL);              // Handle to task struct
 
   // STM32duino requires that the FreeRTOS scheduler be manually started
   vTaskStartScheduler();

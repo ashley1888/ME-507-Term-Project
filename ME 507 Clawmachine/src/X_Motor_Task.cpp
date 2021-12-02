@@ -32,14 +32,16 @@ void task_x_motor(void *p_params)
 
     if(user_x)
     {
-      Serial << "My X position is: " << X_encoder.getCount() << endl;
+      // Serial << "My X position is: " << X_encoder.getCount() << endl;
       X_motor.setduty(-100);
-      Serial << "The shares variable value for x is: " << user_x << endl;;
+      // Serial << "The shares variable value for x is: " << user_x << endl;;
 
       if (abs(X_encoder.getCount() - user_x) <= 50)
       {
         X_motor.setduty(0);
         share_x_position.put(0);
+        share_x_job_status.put(1);
+        queue_x_task.put(1);
       }
     }
   }

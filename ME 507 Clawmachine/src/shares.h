@@ -15,19 +15,15 @@
 // Example of shares in depth at https://spluttflob.github.io/ME507-Support/classShare.html
 
 // A queue which triggers a task to print the count at certain times
-extern Queue<uint16_t> queue_x_position;
-
-extern Queue<uint16_t> queue_y_position;
+extern Queue<uint16_t> queue_x_task;
+extern Queue<uint16_t> queue_y_task;
+extern Queue<uint16_t> queue_z_task;
 
 extern Share<uint16_t> share_x_position;
 extern Share<uint16_t> share_y_position;
-
 extern Share<uint16_t> share_x_job_status;
-
 extern Share<uint16_t> share_y_job_status;
-
 extern Share<uint16_t> share_z_job_status;
-
 extern Share<uint16_t> share_gripper_job_status;
 
 #endif // _QUEUES_H_
