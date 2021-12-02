@@ -29,28 +29,22 @@
  */
 void task_controller(void *p_params)
 {
-<<<<<<< HEAD
     uint16_t x_task_done = 1;
     uint16_t y_task_done = 1;
     uint16_t z_task_done = 1;
     uint16_t gripper_task_done = 1;
 
-=======
     uint16_t task_done = 1;
     uint8_t one_pos = (pow(2,16)-1 )/8;
->>>>>>> 7c8f0bce78fd8a241f02b4dfedaa37bef94a8b77
     for (;;)
     {
         if (x_task_done && y_task_done && z_task_done && gripper_task_done)
         {
             if (1) // Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
             {
-<<<<<<< HEAD
-=======
                 uint16_t numberval = Serial.parseInt();
                 uint16_t list = +numberval;
 
->>>>>>> 7c8f0bce78fd8a241f02b4dfedaa37bef94a8b77
                 // Serial.print(listx);
 
                 
@@ -71,7 +65,6 @@ void task_controller(void *p_params)
                 //     // share_user_positiony.put(user_y);
                 // }
 
-<<<<<<< HEAD
                 // delay(5000);
                 // uint16_t numbervalx = Serial.parseInt();
                 // uint16_t listx = +numbervalx;
@@ -81,7 +74,6 @@ void task_controller(void *p_params)
                 // uint16_t numbervaly = Serial.parseInt();
                 // uint16_t listy = +numbervaly;
                 // share_y_position.put(listy);
-=======
                 // queue_x_position.put(listx);
 
                 if list == 1
@@ -432,7 +424,6 @@ void task_controller(void *p_params)
                 // uint16_t lisyx = +numbervaly;
                 // share_y_position.put(listy);
                 // Serial << listy << endl;
->>>>>>> 7c8f0bce78fd8a241f02b4dfedaa37bef94a8b77
 
 
                 share_x_position.put(5000);
