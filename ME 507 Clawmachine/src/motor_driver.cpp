@@ -12,7 +12,7 @@
  *  @details This
  */
 
-MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep, uint8_t nfault )
+MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep, uint8_t nfault)
 //pin1, pin2, nsleep
 {  _nsleep = nsleep;
    _pin1 = pin1;

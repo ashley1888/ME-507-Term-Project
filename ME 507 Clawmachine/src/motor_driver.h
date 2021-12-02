@@ -22,7 +22,7 @@ protected:
    uint8_t _pin1;
    uint8_t _pin2;
 public:
-   MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep);
+   MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep, uint8_t nfault );
    void enable (void);
    void faulted (void);
    void disable (void);
