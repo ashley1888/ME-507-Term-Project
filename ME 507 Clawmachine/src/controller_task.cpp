@@ -62,6 +62,14 @@ void task_controller(void *p_params)
                 // queue_x_position.put(listx);
                 share_x_position.put(listx);
                 Serial << listx << endl;
+
+                delay(5000);
+                uint16_t numbervaly = Serial.parseInt();
+                uint16_t lisyx = +numbervaly;
+                share_y_position.put(listy);
+                Serial << listy << endl;
+
+
                 task_done = 0;
                 // share_gripper_job_status.get();
             }
