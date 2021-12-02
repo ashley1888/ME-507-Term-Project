@@ -15,9 +15,6 @@
 #include "encoder_counter.h"
 #include "Y_Motor_Task.h"
 
-// extern Share<uint16_t> share_encoder_positiony;
-// extern Share<uint16_t> share_user_positiony;
-
 void task_y_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
@@ -26,37 +23,25 @@ void task_y_motor(void *p_params)
   STM32Encoder Y_encoder(TIM1, PA8, PA9);
   Serial << "done." << endl;
 
-  delay(1500);
   Y_motor.enable();
 
-  int8_t power = 100;
-
-  Y_motor.setduty(power); // turn on at max
+  uint16_t user_y = 0;
 
   for (;;)
   {
-    delay(1000);
-    Serial << "My Y position is: " << Y_encoder.getCount() << endl;
-    //   if (Y_encoder.getCount() >= 5000) // spin til encoder 65,535
-    //   {
-    //     Y_motor.setduty(-power); // Y_motor.disable();
-    //   }
-    //   if (Y_encoder.getCount() <= 500) // spin til encoder 65,535
-    //   {
-    //     Y_motor.setduty(power); // Y_motor.disable();
-    //   }
-    // }
+    share_y_position.get(user_y);
 
-    // if (Y_encoder.getCount() < share_user_positionx.get())
-    // {
-    // }
-    // else if (Y_encoder.getCount() > share_user_positionx.get())
-    // {
-    //   Y_motor.setduty(-100);
-    // }
-    // else
-    // {
-    //   Y_motor.setduty(0);
-    // }
+    if(user_y)
+    {
+      Serial << "My Y position is: " << Y_encoder.getCount() << endl;
+      Y_motor.setduty(100);
+      Serial << "The shares variable value for y is: " << user_y << endl;;
+
+      if (abs(Y_encoder.getCount() - user_y) <= 50)
+      {
+        Y_motor.setduty(0);
+        share_y_position.put(0);
+      }
+    }
   }
 }

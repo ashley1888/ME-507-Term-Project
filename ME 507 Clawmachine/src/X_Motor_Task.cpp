@@ -30,8 +30,6 @@ void task_x_motor(void *p_params)
   {
     share_x_position.get(user_x);
 
-    delay(100);
-    Serial << user_x << endl;
     if(user_x)
     {
       Serial << "My X position is: " << X_encoder.getCount() << endl;
