@@ -23,6 +23,9 @@
 
 Queue<uint16_t> queue_x_position(1, "X_Input");
 Queue<uint16_t> queue_y_position(1, "Y_Input");
+
+Share<uint16_t> share_x_position;
+
 Share<uint16_t> share_x_job_status;
 Share<uint16_t> share_y_job_status;
 Share<uint16_t> share_z_job_status;

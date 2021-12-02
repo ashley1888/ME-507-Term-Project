@@ -32,39 +32,39 @@ void task_controller(void *p_params)
     uint16_t task_done = 1;
     for (;;)
     {
-        if (task_done == 1); 
-        
+        if (task_done == 1)
         {
-            if (Serial.available() > 0)  // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
-                { 
-                uint16_t numbervalx = Serial.parseInt(); 
-                uint16_t listx=+ numbervalx;
-                
-                //Serial.print(listx);
-                
-                
-        // delay(5000);
-        // Serial.print("Input x location: ");
-        // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
-        // {
-        //     uint16_t num_read_x = Serial.read();  // not sure on this variables identifier type
-        //     // share_user_positionx.put(num_read_x); // putting the users input value into the share
-        // }
+            if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+            {
+                uint16_t numbervalx = Serial.parseInt();
+                uint16_t listx = +numbervalx;
 
-        // delay(5000);
-        // Serial.print("Input y location: ");
-        // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
-        // {
-        //     uint16_t num_read_y = Serial.read(); // not sure on this variables identifier type
-        //     // share_user_positiony.put(num_read_y);
-        //     // share_user_positionx.put(num_read_x);  // putting the users input value into the share
-        //     // share_user_positiony.put(user_y);
-        // }
+                // Serial.print(listx);
 
+                // delay(5000);
+                // Serial.print("Input x location: ");
+                // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+                // {
+                //     uint16_t num_read_x = Serial.read();  // not sure on this variables identifier type
+                //     // share_user_positionx.put(num_read_x); // putting the users input value into the share
+                // }
 
-             queue_x_position.put(listx);
-             task_done= 0;
-        // share_gripper_job_status.get();
+                // delay(5000);
+                // Serial.print("Input y location: ");
+                // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+                // {
+                //     uint16_t num_read_y = Serial.read(); // not sure on this variables identifier type
+                //     // share_user_positiony.put(num_read_y);
+                //     // share_user_positionx.put(num_read_x);  // putting the users input value into the share
+                //     // share_user_positiony.put(user_y);
+                // }
 
+                // queue_x_position.put(listx);
+                share_x_position.put(listx);
+                Serial << listx << endl;
+                task_done = 0;
+                // share_gripper_job_status.get();
+            }
+        }
     }
 }

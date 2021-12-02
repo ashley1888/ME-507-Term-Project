@@ -19,6 +19,8 @@ extern Queue<uint16_t> queue_x_position;
 
 extern Queue<uint16_t> queue_y_position;
 
+extern Share<uint16_t> share_x_position;
+
 extern Share<uint16_t> share_x_job_status;
 
 extern Share<uint16_t> share_y_job_status;

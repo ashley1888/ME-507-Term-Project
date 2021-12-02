@@ -5,7 +5,6 @@
  *  @author Michael Yiu
  *  @date   2021-Dec-01
  */
-
 #include <Arduino.h>
 #include <PrintStream.h>
 #include <STM32FreeRTOS.h>
@@ -15,9 +14,6 @@
 #include "encoder_counter.h"
 #include "X_Motor_Task.h"
 
-// extern Share<uint16_t> share_encoder_positionx;
-// extern Share<uint16_t> share_user_positionx;
-
 void task_x_motor(void *p_params)
 {
   // Pointers to timer/counters used; could be in a task function
@@ -26,52 +22,49 @@ void task_x_motor(void *p_params)
   STM32Encoder X_encoder(TIM3, PB4, PB5);
   Serial << "done." << endl;
 
-  // delay(1500);
   X_motor.enable();
 
   int8_t power = 100;
-
-  X_motor.setduty(power);
-  // X_motor.setduty(100);
-
   uint16_t user_x = 0;
 
   for (;;)
   {
-    // delay(100);
-    queue_x_position.get(user_x);
-    Serial << "My X position is: " << X_encoder.getCount() << endl;
-    // Serial << "The shares variable value for x is: " << user_x << endl;;
+    share_x_position.get(user_x);
 
-    // vTaskDelay(...)  delays (x miliseconds) and then executes code "clock" // or a_queue.get(); "latency"
-    // delay(1000);
-    // Serial << "My X position is: " << X_encoder.getCount() << endl;
-    if (X_encoder.getCount() == user_x)
+    if(user_x)
     {
-      // X_motor.setduty(0);
-      X_motor.disable();
+      Serial << "My X position is: " << X_encoder.getCount() << endl;
+      X_motor.setduty(power);
+      // Serial << "The shares variable value for x is: " << user_x << endl;;
+
+      if (X_encoder.getCount() == user_x)
+      {
+        X_motor.setduty(0);
+        user_x = 0;
+      }
+      else if (X_encoder.getCount() < user_x)
+      {
+        if (user_x - X_encoder.getCount() < 50)
+        {
+          X_motor.setduty(power/20);
+        }
+        else
+        {
+          X_motor.setduty(power);
+        }
+      }
+      else if (X_encoder.getCount() > user_x)
+      {
+        if (X_encoder.getCount() - user_x > 50)
+        {
+          X_motor.setduty(-power/20);
+        }
+        else
+        {
+          X_motor.setduty(-power);
+        }
     }
-    else if (X_encoder.getCount() < user_x)
-    {
-      if (user_x - X_encoder.getCount() < 50)
-      {
-        X_motor.setduty(power/8);
-      }
-      else
-      {
-        X_motor.setduty(power);
-      }
-    }
-    else if (X_encoder.getCount() > user_x)
-    {
-      if (X_encoder.getCount() - user_x > 50)
-      {
-        X_motor.setduty(-power/8);
-      }
-      else
-      {
-        X_motor.setduty(-power);
-      }
+
     }
   }
 }
