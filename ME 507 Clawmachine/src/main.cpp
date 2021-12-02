@@ -31,7 +31,7 @@ Share<uint16_t> share_x_job_status;
 Share<uint16_t> share_y_job_status;
 Share<uint16_t> share_z_job_status;
 Share<uint16_t> share_gripper_job_status;
-
+ 
 /** @brief   Arduino setup function which runs once at program startup.
  *  @details This function sets up a serial port for communication and creates the
  *           tasks which will be run.
