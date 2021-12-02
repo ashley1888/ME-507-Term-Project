@@ -29,35 +29,28 @@ void task_x_motor(void *p_params)
   // delay(1500);
   X_motor.enable();
 
-  // int8_t power = 100;
+  int8_t power = 100;
 
-  // X_motor.setduty(power);
-  X_motor.setduty(100); // turn on at max
+  X_motor.setduty(power);
+  // X_motor.setduty(100);
+
+  uint16_t user_x = 0;
 
   for (;;)
   {
+    queue_x_position.get(user_x);
+    // Serial << "The shares variable value for x is: " << user_x << endl;;
+
     // vTaskDelay(...)  delays (x miliseconds) and then executes code "clock" // or a_queue.get(); "latency"
-    delay(1000);
-    Serial << "My X position is: " << X_encoder.getCount() << endl;
-    // if (X_encoder.getCount() >= 5000) // spin til encoder 65,535
-    // {
-    //   X_motor.setduty(-power); // X_motor.disable();
-    // }
-    // if (X_encoder.getCount() <= 500) // spin til encoder 65,535
-    // {
-    //   X_motor.setduty(power); // X_motor.disable();
-    // }
-    
-    // if (X_encoder.getCount() < share_user_positionx.get())
-    // {
-    // }
-    // else if (X_encoder.getCount() > share_user_positionx.get())
-    // {
-    //   X_motor.setduty(-100);
-    // }
-    // else
-    // {
-    //   X_motor.setduty(0);
-    // }
+    // delay(1000);
+    // Serial << "My X position is: " << X_encoder.getCount() << endl;
+    if (X_encoder.getCount() <= user_x)
+    {
+      X_motor.setduty(power);
+    }
+    else if (X_encoder.getCount() >= user_x)
+    {
+      X_motor.setduty(-power);
+    }
   }
 }
