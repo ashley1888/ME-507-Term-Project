@@ -24,62 +24,25 @@ void task_x_motor(void *p_params)
 
   X_motor.enable();
 
-  int8_t power = -100;
   uint16_t user_x = 0;
 
   for (;;)
   {
     share_x_position.get(user_x);
 
+    delay(100);
+    Serial << user_x << endl;
     if(user_x)
     {
       Serial << "My X position is: " << X_encoder.getCount() << endl;
-      X_motor.setduty(power);
+      X_motor.setduty(-100);
       Serial << "The shares variable value for x is: " << user_x << endl;;
 
       if (abs(X_encoder.getCount() - user_x) <= 50)
       {
         X_motor.setduty(0);
-        user_x = 0;
+        share_x_position.put(0);
       }
-      // else if (X_encoder.getCount() > user_x)
-      // {
-      //   if (X_encoder.getCount() - user_x > 200)
-      //   {
-      //     X_motor.setduty(power/10);
-      //   }
-      //   else if (X_encoder.getCount() - user_x > 100)
-      //   {
-      //     X_motor.setduty(power/20);
-      //   }
-      //   else if (X_encoder.getCount() - user_x > 75)
-      //   {
-      //     X_motor.setduty(power/50);
-      //   }
-      //   else
-      //   {
-      //     X_motor.setduty(power);
-      //   }
-      // }
-      // else if (X_encoder.getCount() < user_x)
-      // {
-      //   if (user_x - X_encoder.getCount() < 200)
-      //   {
-      //     X_motor.setduty(-power/10);
-      //   }
-      //   else if (user_x - X_encoder.getCount() < 100)
-      //   {
-      //     X_motor.setduty(-power/20);
-      //   }
-      //   else if (user_x - X_encoder.getCount() < 75)
-      //   {
-      //     X_motor.setduty(-power/50);
-      //   }
-      //   else
-      //   {
-      //     X_motor.setduty(-power);
-      //   }
-      // }
     }
   }
 }
