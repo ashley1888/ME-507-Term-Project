@@ -15,8 +15,8 @@
 #include "encoder_counter.h"
 #include "Y_Motor_Task.h"
 
-extern Share<uint16_t> share_encoder_positiony;
-extern Share<uint16_t> share_user_positiony;
+// extern Share<uint16_t> share_encoder_positiony;
+// extern Share<uint16_t> share_user_positiony;
 
 void task_y_motor(void *p_params)
 {

@@ -15,8 +15,8 @@
 #include "encoder_counter.h"
 #include "X_Motor_Task.h"
 
-extern Share<uint16_t> share_encoder_positionx;
-extern Share<uint16_t> share_user_positionx;
+// extern Share<uint16_t> share_encoder_positionx;
+// extern Share<uint16_t> share_user_positionx;
 
 void task_x_motor(void *p_params)
 {
@@ -36,6 +36,7 @@ void task_x_motor(void *p_params)
 
   for (;;)
   {
+    // vTaskDelay(...)  delays (x miliseconds) and then executes code "clock" // or a_queue.get(); "latency"
     delay(1000);
     Serial << "My X position is: " << X_encoder.getCount() << endl;
     // if (X_encoder.getCount() >= 5000) // spin til encoder 65,535
