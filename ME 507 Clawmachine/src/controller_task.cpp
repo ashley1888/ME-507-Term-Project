@@ -29,29 +29,22 @@
  */
 void task_controller(void *p_params)
 {
-    // uint16_t x_task_done = 1;
-    // uint16_t y_task_done = 1;
-    // uint16_t z_task_done = 1;
-    // uint16_t gripper_task_done = 1;
+    uint16_t x_task_done = 1;
+    uint16_t y_task_done = 1;
+    uint16_t z_task_done = 1;
+    uint16_t gripper_task_done = 1;
 
-    // uint16_t task_done = 1;
-    // double one_pos = (pow(2, 16) - 1) / 8;
+    uint16_t task_done = 1;
+    uint8_t one_pos = (pow(2, 16) - 1) / 8;
     for (;;)
     {
-        // Serial << "i was not able to do it" << endl;
-        if (1)
+        if (x_task_done && y_task_done && z_task_done && gripper_task_done)
         {
-            // Serial << "i did it" << endl;
-            if (1) //Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+            if (1) // Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
             {
-                // uint16_t numberval = Serial.parseInt();
-                // uint16_t list = +numberval;
+                uint16_t numberval = Serial.parseInt();
+                uint16_t list = +numberval;
 
-
-                share_x_position.put(5000);
-                share_y_position.put(5000);
-                // Serial.print(listx);
-            }
                 // Serial.print("Input x location: ");
                 // if (Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
                 // {
@@ -80,361 +73,370 @@ void task_controller(void *p_params)
                 // share_y_position.put(listy);
                 // queue_x_position.put(listx);
 
-            //     if (list == 1)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 2)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 3)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 4)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 5)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 6)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 7)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos);
-            //     }
-            //     else if (list == 8)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos);
-            //     }
+                //     if (list == 1)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 2)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 3)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 4)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 5)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 6)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 7)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos);
+                //     }
+                //     else if (list == 8)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos);
+                //     }
+                
+                //     // row 2
+                //     else if (list == 9)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 10)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 11)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 12)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 13)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 14)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 15)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 2);
+                //     }
+                //     else if (list == 16)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 2);
+                //     }
 
-            //     // row 2
-            //     else if (list == 9)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 10)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 11)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 12)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 13)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 14)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 15)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 2);
-            //     }
-            //     else if (list == 16)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 2);
-            //     }
+                //     // row 3
+                //     else if (list == 17)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 18)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 19)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 20)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 21)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 22)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 23)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 3);
+                //     }
+                //     else if (list == 24)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 3);
+                //     }
 
-            //     // row 3
-            //     else if (list == 17)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 18)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 19)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 20)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 21)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 22)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 23)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 3);
-            //     }
-            //     else if (list == 24)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 3);
-            //     }
+                //     // row 4
 
-            //     // row 4
+                //     else if (list == 25)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 26)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 27)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 28)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 29)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 30)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 31)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 4);
+                //     }
+                //     else if (list == 32)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 4);
+                //     }
 
-            //     else if (list == 25)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 26)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 27)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 28)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 29)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 30)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 31)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 4);
-            //     }
-            //     else if (list == 32)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 4);
-            //     }
+                //     // row 5
+                //     //
+                //     //
+                //     else if (list == 33)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 34)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 35)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 36)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 37)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 38)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 39)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 5);
+                //     }
+                //     else if (list == 40)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 5);
+                //     }
 
-            //     // row 5
-            //     //
-            //     //
-            //     else if (list == 33)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 34)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 35)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 36)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 37)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 38)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 39)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 5);
-            //     }
-            //     else if (list == 40)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 5);
-            //     }
+                //     // row 6
+                //     else if (list == 41)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 42)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 43)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 44)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 45)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 46)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 47)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 6);
+                //     }
+                //     else if (list == 48)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 6);
+                //     }
 
-            //     // row 6
-            //     else if (list == 41)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 42)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 43)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 44)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 45)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 46)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 47)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 6);
-            //     }
-            //     else if (list == 48)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 6);
-            //     }
+                //     // row 7
+                //     else if (list == 49)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 50)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 51)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 52)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 53)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 54)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 55)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 7);
+                //     }
+                //     else if (list == 56)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 7);
+                //     }
 
-            //     // row 7
-            //     else if (list == 49)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 50)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 51)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 52)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 53)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 54)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 55)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 7);
-            //     }
-            //     else if (list == 56)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 7);
-            //     }
+                //     // row 8
 
-            //     // row 8
+                //     else if (list == 57)
+                //     {
+                //         share_x_position.put(one_pos);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 58)
+                //     {
+                //         share_x_position.put(one_pos * 2);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 59)
+                //     {
+                //         share_x_position.put(one_pos * 3);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 60)
+                //     {
+                //         share_x_position.put(one_pos * 4);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 61)
+                //     {
+                //         share_x_position.put(one_pos * 5);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 62)
+                //     {
+                //         share_x_position.put(one_pos * 6);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 63)
+                //     {
+                //         share_x_position.put(one_pos * 7);
+                //         share_y_position.put(one_pos * 8);
+                //     }
+                //     else if (list == 64)
+                //     {
+                //         share_x_position.put(one_pos * 8);
+                //         share_y_position.put(one_pos * 8);
+                //     }
 
-            //     else if (list == 57)
-            //     {
-            //         share_x_position.put(one_pos);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 58)
-            //     {
-            //         share_x_position.put(one_pos * 2);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 59)
-            //     {
-            //         share_x_position.put(one_pos * 3);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 60)
-            //     {
-            //         share_x_position.put(one_pos * 4);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 61)
-            //     {
-            //         share_x_position.put(one_pos * 5);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 62)
-            //     {
-            //         share_x_position.put(one_pos * 6);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 63)
-            //     {
-            //         share_x_position.put(one_pos * 7);
-            //         share_y_position.put(one_pos * 8);
-            //     }
-            //     else if (list == 64)
-            //     {
-            //         share_x_position.put(one_pos * 8);
-            //         share_y_position.put(one_pos * 8);
-            //     }
+                //     // share_x_position.put(listx);
+                //     Serial << list << endl;
 
-            //     // share_x_position.put(listx);
-            //     Serial << list << endl;
+                //     // delay(5000);
+                //     // uint16_t numbervaly = Serial.parseInt();
+                //     // uint16_t lisyx = +numbervaly;
+                //     // share_y_position.put(listy);
+                //     // Serial << listy << endl;
 
-            //     // delay(5000);
-            //     // uint16_t numbervaly = Serial.parseInt();
-            //     // uint16_t lisyx = +numbervaly;
-            //     // share_y_position.put(listy);
-            //     // Serial << listy << endl;
-
-            //     // share_x_position.put(5000);
-            //     // share_y_position.put(5000);
-            // }
-            // x_task_done = 0;
-            // y_task_done = 0;
-            // z_task_done = 0;
-            // gripper_task_done = 0;
+                //     // share_x_position.put(5000);
+                //     // share_y_position.put(5000);
+                // }
+                // x_task_done = 0;
+                // y_task_done = 0;
+                // z_task_done = 0;
+                // gripper_task_done = 0;
+                share_x_position.put(5000);
+                share_y_position.put(5000);
+            }
+            share_x_job_status.get(x_task_done);
+            share_y_job_status.get(y_task_done);
+            share_z_job_status.get(z_task_done);
+            share_gripper_job_status.get(gripper_task_done);
+            Serial << "i got past" << endl;
+            Serial << x_task_done << " " << y_task_done << endl;
         }
     }
 }
