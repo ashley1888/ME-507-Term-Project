@@ -42,14 +42,18 @@ void MotorDriver::disable (void){
     digitalWrite(_nsleep, LOW);
 }
 void MotorDriver::setduty (int8_t duty){   
-    if (duty >= 0){
+    if (duty > 0){
         digitalWrite(_pin1, HIGH);
         digitalWrite(_pin2, LOW);
         analogWrite(_pin1, duty);
     }
-    if (duty <= 0){
+    if (duty < 0){
         digitalWrite(_pin1, LOW);
         digitalWrite(_pin2, HIGH);
         analogWrite(_pin1, -duty);
-    }    
+    }
+    if(duty == 0)
+    {
+        analogWrite(_pin1, duty);
+    }
 }
