@@ -32,7 +32,7 @@ void task_x_motor(void *p_params)
 
     if(user_x)
     {
-      // Serial << "My X position is: " << X_encoder.getCount() << endl;
+       Serial << "My X position is: " << X_encoder.getCount() << endl;
       X_motor.setduty(-100);
       // Serial << "The shares variable value for x is: " << user_x << endl;;
 
