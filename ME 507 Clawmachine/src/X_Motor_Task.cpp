@@ -29,10 +29,10 @@ void task_x_motor(void *p_params)
   for (;;)
   {
     share_x_position.get(user_x);
-
-    if(user_x)
+    delay(1000);
+    if(user_x != 0)
     {
-      // Serial << "My X position is: " << X_encoder.getCount() << endl;
+      Serial << "My X position is: " << X_encoder.getCount() << endl;
       X_motor.setduty(-100);
       // Serial << "The shares variable value for x is: " << user_x << endl;;
 

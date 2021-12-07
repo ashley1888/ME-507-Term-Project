@@ -30,19 +30,24 @@ void task_y_motor(void *p_params)
   for (;;)
   {
     share_y_position.get(user_y);
+    delay(1000);
 
     if(user_y)
     {
-      // Serial << "My Y position is: " << Y_encoder.getCount() << endl;
+      Serial << "My Y position is: " << Y_encoder.getCount() << endl;
       Y_motor.setduty(100);
       // Serial << "The shares variable value for y is: " << user_y << endl;;
 
-      if (abs(Y_encoder.getCount() - user_y) <= 50)
+      if (abs(Y_encoder.getCount() - user_y) <= 500)
       {
+        Serial << "My Y position should stop " << endl;
         Y_motor.setduty(0);
         share_y_position.put(0);
         share_y_job_status.put(1);
         queue_y_task.put(1);
+        share_x_job_status.put(1);
+        queue_x_task.put(1);
+
       }
     }
   }
