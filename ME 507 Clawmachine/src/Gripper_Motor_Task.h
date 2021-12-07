@@ -1,7 +1,8 @@
 /** @file Gripper_Motor_Task.h
- *  This file contains code for a task which records data somewhat quickly.
+ *  This file contains the header for a file that operates the gripping mechanism.
+ *  It closes the gripper, waits a duration, then opens it.
  * 
- *  @author Michael Yiu
+ *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01
  */
 
