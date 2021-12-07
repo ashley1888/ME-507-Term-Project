@@ -1,48 +1,46 @@
 /** @file controller_task.cpp
- *    This file contains code to test a class for using encoders on STM32's in
- *    the Arduino environment.
- *
- *    References:
- *    @c https://www.edwinfairchild.com/2019/04/interface-rotary-encoder-right-way.html
- *
- *  @author JR Ridgely
- *  @date   2020-Nov-15 Original file, based on stuff from the Interwebs
- * https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_test.cpp
+ *    This file contains code for a file which reads the user's position input and stores it into shared variables, 
+ *    as well as reading shared variables from other files. 
+ * 
+ *  @author Ashley Humpal and Michael Yiu 
+ *  @date   2021-Dec-06 
  */
 
-#include <Arduino.h>
+#include <Arduino.h> 
 #include <PrintStream.h>
 #include <STM32FreeRTOS.h>
 #include "controller_task.h"
 #include "shares.h"
 
-/** @brief   Task which tests the reading of encoders using the @c STM32Encoder
- *           class.
+/** @brief   Task which reads the user's input and appropriately stores it into a position
+ *           shared variable.
  *  @param   p_params A pointer, which is ignored, to no parameters
  */
 void task_controller(void *p_params)
 {
-    uint16_t x_task_done = 1;
-    uint16_t y_task_done = 1;
-    uint16_t z_task_done = 1;
-    uint16_t gripper_task_done = 1;
-    uint16_t task_done = 1;
-    uint8_t one_pos = (pow(2, 16) - 1) / 8;
+    uint16_t x_task_done = 1;  // Variable representing status of the completion of the X_Motor_Task
+    uint16_t y_task_done = 1;  // Variable representing status of the completion of the Y_Motor_Task
+    uint16_t z_task_done = 1;  // Variable representing status of the completion of the Z_Motor_Task
+    uint16_t gripper_task_done = 1; // Variable representing status of the completion of the Gripper_Motor_Task
+    uint16_t task_done = 1; // Variable representing status of the completion of all motor tasks
+    uint8_t one_pos = (pow(2, 16) - 1) / 8; // Variable representing the rotation value needed to move one square on the chess board
     for (;;)
     {
-        if (x_task_done && y_task_done && z_task_done && gripper_task_done)
+        if (x_task_done && y_task_done && z_task_done && gripper_task_done) // Checks if all motor tasks are completed 
         {
             //if (1) 
-            if Serial.available() > 0) // source from link Ridgley sent: https://forum.arduino.cc/t/controlling-arduino-by-text-input/112703/3
+            if Serial.available() > 0) // Checks whether user has input anything to the serial monitor 
             {
-                uint16_t numberval = Serial.parseInt();
-                uint16_t list = +numberval;
-                delay(5000);
+                uint16_t numberval = Serial.parseInt(); // Reads user input integer values
+                uint16_t list = +numberval; //Puts the read numbers together in case there's more than one
+                delay(5000); //Waits a little to let user finish entering numbers
 
-                    if (list == 1)
+                // Beginning of if else conditionals to set shared position variables based on what the user input
+
+                    if (list == 1) // If user entered 1
                     {
-                        share_x_position.put(one_pos);
-                        share_y_position.put(one_pos);
+                        share_x_position.put(one_pos); // Set the shared user x position as the following
+                        share_y_position.put(one_pos); // Set the shared user y position as the following
                     }
                     else if (list == 2)
                     {
@@ -165,7 +163,6 @@ void task_controller(void *p_params)
                     }
 
                     // row 4
-
                     else if (list == 25)
                     {
                         share_x_position.put(one_pos);
@@ -208,8 +205,6 @@ void task_controller(void *p_params)
                     }
 
                     // row 5
-                    //
-                    //
                     else if (list == 33)
                     {
                         share_x_position.put(one_pos);
@@ -336,7 +331,6 @@ void task_controller(void *p_params)
                     }
 
                     // row 8
-
                     else if (list == 57)
                     {
                         share_x_position.put(one_pos);
@@ -384,19 +378,20 @@ void task_controller(void *p_params)
 
                     Serial << list << endl;
                 }
-
-                x_task_done = 0;
+                // Clear initial variables that indicate the task is done in preparation for next run
+                x_task_done = 0; 
                 y_task_done = 0;
                 z_task_done = 0;
                 gripper_task_done = 0;
-                //share_x_position.put(5000);
+
+                // Testing code 
+                //share_x_position.put(5000); 
                 //share_y_position.put(5000);
             }
-            share_x_job_status.get(x_task_done);
-            share_y_job_status.get(y_task_done);
-            share_z_job_status.get(z_task_done);
-            share_gripper_job_status.get(gripper_task_done);
-    
+            share_x_job_status.get(x_task_done); // Get shared variable representing status of X_Motor_Task
+            share_y_job_status.get(y_task_done); // Get shared variable representing status of Y_Motor_Task
+            share_z_job_status.get(z_task_done); // Get shared variable representing status of Z_Motor_Task
+            share_gripper_job_status.get(gripper_task_done); // Get shared variable representing status of Gripper_Motor_Task
         }
     }
 }
