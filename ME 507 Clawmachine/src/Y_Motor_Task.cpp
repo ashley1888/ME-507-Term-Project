@@ -1,5 +1,5 @@
 /** @file Y_Motor_Task.cpp
-  *    This file contains the code for the motor operating in the y direction. It uses the encoder and
+ *    This file contains the code for the motor operating in the y direction. It uses the encoder and
  *    and motor drivers to verify it's at the desired locaton.
  *
  *  @author Michael Yiu and Ashley Humpal
