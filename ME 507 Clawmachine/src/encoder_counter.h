@@ -1,4 +1,7 @@
 /** @file encoder_counter.h
+ *    This file was taken from the open source repository of spluttflob and contains their documentation here.
+ *    @c https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp
+ * 
  *    This file contains a class which allows timer/counters on an STM32 to be
  *    used to read quadrature encoders within the Arduino environment. This 
  *    code is a bit kludgey, as it was put together quickly in response to a
