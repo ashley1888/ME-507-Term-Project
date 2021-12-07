@@ -1,7 +1,7 @@
 /** @file X_Motor_Task.h
- *  This file contains code for a task which records data somewhat quickly.
+ *  This file contains a header for the motor task operating in the x direction.
  * 
- *  @author Michael Yiu
+ *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01
  */
 
