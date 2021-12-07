@@ -1,9 +1,10 @@
 /** @file main.cpp
- *    This file contains a simple test program with which C++ for the STM32 using
- *    Arduino is tested along with various other tools such as Doxygen and Git.
+ *    This file contains the controller and motor tasks needed to operate the claw machine. 
+ *    The motor tasks are for the X axis, Y axis, Z axis, and for the gripper. 
+ *    The controller tasks reads the user input and sends it to the motor tasks.
  *
- *  @author Ashley Humpal
- *  @date 2021-19-Oct
+ *  @author Ashley Humpal and Michael Yiu
+ *  @date 2021-01-Dec
 
  */
 #include <Arduino.h>
@@ -21,6 +22,7 @@
 #include "Z_Motor_Task.h"
 #include "Gripper_Motor_Task.h"
 
+// Shared variables and queues initialized 
 Queue<uint16_t> queue_x_task(1, "X_Status");
 Queue<uint16_t> queue_y_task(1, "Y_Status");
 Queue<uint16_t> queue_z_task(1, "Z_Status");
@@ -38,7 +40,6 @@ Share<uint16_t> share_gripper_job_status;
  */
 void setup()
 {
-  // put your setup code here, to run once:
   Serial.begin(115200);
   delay(1500);
 
