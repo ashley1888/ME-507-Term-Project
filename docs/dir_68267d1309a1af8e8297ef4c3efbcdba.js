@@ -6,14 +6,18 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "encoder_counter.h", "encoder__counter_8h.html", [
       [ "STM32Encoder", "class_s_t_m32_encoder.html", "class_s_t_m32_encoder" ]
     ] ],
-    [ "encoder_task.cpp", "encoder__task_8cpp.html", "encoder__task_8cpp" ],
-    [ "encoder_task.h", "encoder__task_8h.html", "encoder__task_8h" ],
+    [ "Gripper_Motor_Task.cpp", "_gripper___motor___task_8cpp.html", "_gripper___motor___task_8cpp" ],
+    [ "Gripper_Motor_Task.h", "_gripper___motor___task_8h.html", "_gripper___motor___task_8h" ],
     [ "main.cpp", "main_8cpp.html", "main_8cpp" ],
-    [ "motor1_task.cpp", "motor1__task_8cpp.html", "motor1__task_8cpp" ],
-    [ "motor1_task.h", "motor1__task_8h.html", "motor1__task_8h" ],
     [ "motor_driver.cpp", "motor__driver_8cpp.html", null ],
     [ "motor_driver.h", "motor__driver_8h.html", [
       [ "MotorDriver", "class_motor_driver.html", "class_motor_driver" ]
     ] ],
-    [ "shares.h", "shares_8h.html", "shares_8h" ]
+    [ "shares.h", "shares_8h.html", "shares_8h" ],
+    [ "X_Motor_Task.cpp", "_x___motor___task_8cpp.html", "_x___motor___task_8cpp" ],
+    [ "X_Motor_Task.h", "_x___motor___task_8h.html", "_x___motor___task_8h" ],
+    [ "Y_Motor_Task.cpp", "_y___motor___task_8cpp.html", "_y___motor___task_8cpp" ],
+    [ "Y_Motor_Task.h", "_y___motor___task_8h.html", "_y___motor___task_8h" ],
+    [ "Z_Motor_Task.cpp", "_z___motor___task_8cpp.html", "_z___motor___task_8cpp" ],
+    [ "Z_Motor_Task.h", "_z___motor___task_8h.html", "_z___motor___task_8h" ]
 ];

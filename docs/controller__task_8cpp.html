@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clawmachine: src/controller_task.cpp File Reference</title>
+<title>Claw Machine: src/controller_task.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,10 +25,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Clawmachine
+   <div id="projectname">Claw Machine
    &#160;<span id="projectnumber">1.01</span>
    </div>
-   <div id="projectbrief">ME 507 Term Project</div>
+   <div id="projectbrief">A 3-axis claw machine</div>
   </td>
  </tr>
  </tbody>
@@ -93,35 +93,27 @@ $(document).ready(function(){initNavTree('controller__task_8cpp.html',''); initR
 <code>#include &lt;PrintStream.h&gt;</code><br />
 <code>#include &lt;STM32FreeRTOS.h&gt;</code><br />
 <code>#include &quot;<a class="el" href="controller__task_8h_source.html">controller_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="shares_8h_source.html">shares.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a1c626f59becb67075cd4a0c92eb6c4b1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller__task_8cpp.html#a1c626f59becb67075cd4a0c92eb6c4b1">task_control</a> (void *p_params)</td></tr>
-<tr class="memdesc:a1c626f59becb67075cd4a0c92eb6c4b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task which tests the reading of encoders using the <code><a class="el" href="class_s_t_m32_encoder.html" title="Class which operates an STM32 timer in quadrature encoder mode.">STM32Encoder</a></code> class.  <a href="controller__task_8cpp.html#a1c626f59becb67075cd4a0c92eb6c4b1">More...</a><br /></td></tr>
-<tr class="separator:a1c626f59becb67075cd4a0c92eb6c4b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7dfd9b79bc5a37d7df40207afbc5431f"><td class="memItemLeft" align="right" valign="top"><a id="a7dfd9b79bc5a37d7df40207afbc5431f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller__task_8cpp.html#a7dfd9b79bc5a37d7df40207afbc5431f">setup</a> (void)</td></tr>
-<tr class="memdesc:a7dfd9b79bc5a37d7df40207afbc5431f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The usual Arduino setup function which runs once as we start up. <br /></td></tr>
-<tr class="separator:a7dfd9b79bc5a37d7df40207afbc5431f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0b33edabd7f1c4e4a0bf32c67269be2f"><td class="memItemLeft" align="right" valign="top"><a id="a0b33edabd7f1c4e4a0bf32c67269be2f"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller__task_8cpp.html#a0b33edabd7f1c4e4a0bf32c67269be2f">loop</a> (void)</td></tr>
-<tr class="memdesc:a0b33edabd7f1c4e4a0bf32c67269be2f"><td class="mdescLeft">&#160;</td><td class="mdescRight">The Arduino loop function, which is unused in this program. <br /></td></tr>
-<tr class="separator:a0b33edabd7f1c4e4a0bf32c67269be2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b64ac7c32e03d8bc92f15573618b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller__task_8cpp.html#a74b64ac7c32e03d8bc92f15573618b3b">task_controller</a> (void *p_params)</td></tr>
+<tr class="memdesc:a74b64ac7c32e03d8bc92f15573618b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task which reads the user's input and appropriately stores it into a position shared variable.  <a href="controller__task_8cpp.html#a74b64ac7c32e03d8bc92f15573618b3b">More...</a><br /></td></tr>
+<tr class="separator:a74b64ac7c32e03d8bc92f15573618b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains code to test a class for using encoders on STM32's in the Arduino environment.</p>
-<p>References: <code><a href="https://www.edwinfairchild.com/2019/04/interface-rotary-encoder-right-way.html">https://www.edwinfairchild.com/2019/04/interface-rotary-encoder-right-way.html</a></code> </p>
-<dl class="section author"><dt>Author</dt><dd>JR Ridgely </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2020-Nov-15 Original file, based on stuff from the Interwebs <a href="https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_test.cpp">https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_test.cpp</a> </dd></dl>
+<div class="textblock"><p>This file contains code for a file which reads the user's position input and stores it into shared variables, as well as reading shared variables from other files.</p>
+<dl class="section author"><dt>Author</dt><dd>Ashley Humpal and Michael Yiu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-Dec-06 </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
-<a id="a1c626f59becb67075cd4a0c92eb6c4b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a1c626f59becb67075cd4a0c92eb6c4b1">&#9670;&nbsp;</a></span>task_control()</h2>
+<a id="a74b64ac7c32e03d8bc92f15573618b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b64ac7c32e03d8bc92f15573618b3b">&#9670;&nbsp;</a></span>task_controller()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">void task_control </td>
+          <td class="memname">void task_controller </td>
           <td>(</td>
           <td class="paramtype">void *&#160;</td>
           <td class="paramname"><em>p_params</em></td><td>)</td>
@@ -130,7 +122,7 @@ void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="cont
       </table>
 </div><div class="memdoc">
 
-<p>Task which tests the reading of encoders using the <code><a class="el" href="class_s_t_m32_encoder.html" title="Class which operates an STM32 timer in quadrature encoder mode.">STM32Encoder</a></code> class. </p>
+<p>Task which reads the user's input and appropriately stores it into a position shared variable. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">p_params</td><td>A pointer, which is ignored, to no parameters </td></tr>

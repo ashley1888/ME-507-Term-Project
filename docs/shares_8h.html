@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clawmachine: src/shares.h File Reference</title>
+<title>Claw Machine: src/shares.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,10 +25,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Clawmachine
+   <div id="projectname">Claw Machine
    &#160;<span id="projectnumber">1.01</span>
    </div>
-   <div id="projectbrief">ME 507 Term Project</div>
+   <div id="projectbrief">A 3-axis claw machine</div>
   </td>
  </tr>
  </tbody>
@@ -90,29 +90,44 @@ $(document).ready(function(){initNavTree('shares_8h.html',''); initResizable(); 
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &quot;taskshare.h&quot;</code><br />
+<code>#include &quot;taskqueue.h&quot;</code><br />
 </div>
 <p><a href="shares_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:a6a7acf58af8749d423f120a39fb0fc82"><td class="memItemLeft" align="right" valign="top"><a id="a6a7acf58af8749d423f120a39fb0fc82"></a>
-Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_encoder_positionx</b></td></tr>
-<tr class="separator:a6a7acf58af8749d423f120a39fb0fc82"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8f2a58999796d97e9eb3189aa5e8d224"><td class="memItemLeft" align="right" valign="top"><a id="a8f2a58999796d97e9eb3189aa5e8d224"></a>
-Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_encoder_positiony</b></td></tr>
-<tr class="separator:a8f2a58999796d97e9eb3189aa5e8d224"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa934e88e811c83cb0bec38f1cd59d19d"><td class="memItemLeft" align="right" valign="top"><a id="aa934e88e811c83cb0bec38f1cd59d19d"></a>
-Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_user_positionx</b></td></tr>
-<tr class="separator:aa934e88e811c83cb0bec38f1cd59d19d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aab1785ac60dcc0a0fc3d876e2dda388e"><td class="memItemLeft" align="right" valign="top"><a id="aab1785ac60dcc0a0fc3d876e2dda388e"></a>
-Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_user_positiony</b></td></tr>
-<tr class="separator:aab1785ac60dcc0a0fc3d876e2dda388e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a739d275a823c6a886f7a71e2cd3fb907"><td class="memItemLeft" align="right" valign="top"><a id="a739d275a823c6a886f7a71e2cd3fb907"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_x_task</b></td></tr>
+<tr class="separator:a739d275a823c6a886f7a71e2cd3fb907"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2682f4b135b27adafd7a7c0298fc849b"><td class="memItemLeft" align="right" valign="top"><a id="a2682f4b135b27adafd7a7c0298fc849b"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_y_task</b></td></tr>
+<tr class="separator:a2682f4b135b27adafd7a7c0298fc849b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a510778aa099544b4c009cc9d4f09ce46"><td class="memItemLeft" align="right" valign="top"><a id="a510778aa099544b4c009cc9d4f09ce46"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_z_task</b></td></tr>
+<tr class="separator:a510778aa099544b4c009cc9d4f09ce46"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a9cbed501eb085053dfad4d2d8184e5"><td class="memItemLeft" align="right" valign="top"><a id="a3a9cbed501eb085053dfad4d2d8184e5"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_x_position</b></td></tr>
+<tr class="separator:a3a9cbed501eb085053dfad4d2d8184e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb48f9e6fdc7aa83d4b050dabb08ff3d"><td class="memItemLeft" align="right" valign="top"><a id="afb48f9e6fdc7aa83d4b050dabb08ff3d"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_y_position</b></td></tr>
+<tr class="separator:afb48f9e6fdc7aa83d4b050dabb08ff3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c15f1a5c018e1ee09d530846351fc69"><td class="memItemLeft" align="right" valign="top"><a id="a9c15f1a5c018e1ee09d530846351fc69"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_x_job_status</b></td></tr>
+<tr class="separator:a9c15f1a5c018e1ee09d530846351fc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604788c27e01d19758a30634d29e6372"><td class="memItemLeft" align="right" valign="top"><a id="a604788c27e01d19758a30634d29e6372"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_y_job_status</b></td></tr>
+<tr class="separator:a604788c27e01d19758a30634d29e6372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebe6a778e744913bc6851719f4cbd1f"><td class="memItemLeft" align="right" valign="top"><a id="adebe6a778e744913bc6851719f4cbd1f"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_z_job_status</b></td></tr>
+<tr class="separator:adebe6a778e744913bc6851719f4cbd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af480a577b3a9a51577f81c8e98d6e11e"><td class="memItemLeft" align="right" valign="top"><a id="af480a577b3a9a51577f81c8e98d6e11e"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_gripper_job_status</b></td></tr>
+<tr class="separator:af480a577b3a9a51577f81c8e98d6e11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains extern declarations of shares and queues which are used in more than one file of a demonstration project.</p>
-<dl class="section author"><dt>Author</dt><dd>JR Ridgely </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2021-Oct-23 Original file </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>(c) 2021 by JR Ridgely, released under the LGPL 3.0. </dd></dl>
+<div class="textblock"><p>This file contains extern declarations of shares and queues.</p>
+<dl class="section author"><dt>Author</dt><dd>Ashley Humpal and Michael Yiu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-Dec-06 </dd></dl>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['getcount_6',['getCount',['../class_s_t_m32_encoder.html#aaa81c6d6736667b165ccf81f1f417dc8',1,'STM32Encoder']]]
+  ['disable_5',['disable',['../class_motor_driver.html#ab7ef925c94ac19ccec5e6f7cd3d372d2',1,'MotorDriver']]]
 ];

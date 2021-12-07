@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pause_42',['pause',['../class_s_t_m32_encoder.html#a67f9555e6838296b6533f6ab71a0530e',1,'STM32Encoder']]]
+  ['getcount_53',['getCount',['../class_s_t_m32_encoder.html#aaa81c6d6736667b165ccf81f1f417dc8',1,'STM32Encoder']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['resume_43',['resume',['../class_s_t_m32_encoder.html#ab9133c7ac41f4ca78b59947dce1070a8',1,'STM32Encoder']]]
+  ['motordriver_54',['MotorDriver',['../class_motor_driver.html#a7006421a30ffe79be3bf84b4607c7a98',1,'MotorDriver']]]
 ];

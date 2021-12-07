@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['zero_24',['zero',['../class_s_t_m32_encoder.html#af1b3a03d36f25377333a24a5b6346219',1,'STM32Encoder']]]
+  ['task_5fcontroller_24',['task_controller',['../controller__task_8cpp.html#a74b64ac7c32e03d8bc92f15573618b3b',1,'task_controller(void *p_params):&#160;controller_task.cpp'],['../controller__task_8h.html#a74b64ac7c32e03d8bc92f15573618b3b',1,'task_controller(void *p_params):&#160;controller_task.cpp']]]
 ];
