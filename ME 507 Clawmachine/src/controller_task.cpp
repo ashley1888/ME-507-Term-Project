@@ -393,5 +393,6 @@ void task_controller(void *p_params)
             share_z_job_status.get(z_task_done); // Get shared variable representing status of Z_Motor_Task
             share_gripper_job_status.get(gripper_task_done); // Get shared variable representing status of Gripper_Motor_Task
         }
+        vTaskDelay (10);
     }
 }
