@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clawmachine: src/main.cpp File Reference</title>
+<title>Claw Machine: src/main.cpp File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,10 +25,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Clawmachine
+   <div id="projectname">Claw Machine
    &#160;<span id="projectnumber">1.01</span>
    </div>
-   <div id="projectbrief">ME 507 Term Project</div>
+   <div id="projectbrief">A 3-axis claw machine</div>
   </td>
  </tr>
  </tbody>
@@ -84,28 +84,64 @@ $(document).ready(function(){initNavTree('main_8cpp.html',''); initResizable(); 
 
 <div class="header">
   <div class="summary">
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle">
 <div class="title">main.cpp File Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#include &lt;Arduino.h&gt;</code><br />
 <code>#include &lt;PrintStream.h&gt;</code><br />
-<code>#include &lt;<a class="el" href="motor__driver_8h_source.html">motor_driver.h</a>&gt;</code><br />
+<code>#include &quot;<a class="el" href="shares_8h_source.html">shares.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="controller__task_8h_source.html">controller_task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_x___motor___task_8h_source.html">X_Motor_Task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_y___motor___task_8h_source.html">Y_Motor_Task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_z___motor___task_8h_source.html">Z_Motor_Task.h</a>&quot;</code><br />
+<code>#include &quot;<a class="el" href="_gripper___motor___task_8h_source.html">Gripper_Motor_Task.h</a>&quot;</code><br />
 </div><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a3ce7178e1e96af388361dadb049a3cb1"><td class="memItemLeft" align="right" valign="top"><a id="a3ce7178e1e96af388361dadb049a3cb1"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_x_task</b> (1, &quot;X_Status&quot;)</td></tr>
+<tr class="separator:a3ce7178e1e96af388361dadb049a3cb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0f5f3fcafcf6f0fe638fa623760ebdd"><td class="memItemLeft" align="right" valign="top"><a id="ac0f5f3fcafcf6f0fe638fa623760ebdd"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_y_task</b> (1, &quot;Y_Status&quot;)</td></tr>
+<tr class="separator:ac0f5f3fcafcf6f0fe638fa623760ebdd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac94bd09513996fbe7c3f1015374c2543"><td class="memItemLeft" align="right" valign="top"><a id="ac94bd09513996fbe7c3f1015374c2543"></a>
+Queue&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>queue_z_task</b> (1, &quot;Z_Status&quot;)</td></tr>
+<tr class="separator:ac94bd09513996fbe7c3f1015374c2543"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4fc01d736fe50cf5b977f755b675f11d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">setup</a> ()</td></tr>
 <tr class="memdesc:a4fc01d736fe50cf5b977f755b675f11d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Arduino setup function which runs once at program startup.  <a href="main_8cpp.html#a4fc01d736fe50cf5b977f755b675f11d">More...</a><br /></td></tr>
 <tr class="separator:a4fc01d736fe50cf5b977f755b675f11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afe461d27b9c48d5921c00d521181f12f"><td class="memItemLeft" align="right" valign="top"><a id="afe461d27b9c48d5921c00d521181f12f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
 <tr class="separator:afe461d27b9c48d5921c00d521181f12f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a3a9cbed501eb085053dfad4d2d8184e5"><td class="memItemLeft" align="right" valign="top"><a id="a3a9cbed501eb085053dfad4d2d8184e5"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_x_position</b></td></tr>
+<tr class="separator:a3a9cbed501eb085053dfad4d2d8184e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb48f9e6fdc7aa83d4b050dabb08ff3d"><td class="memItemLeft" align="right" valign="top"><a id="afb48f9e6fdc7aa83d4b050dabb08ff3d"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_y_position</b></td></tr>
+<tr class="separator:afb48f9e6fdc7aa83d4b050dabb08ff3d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c15f1a5c018e1ee09d530846351fc69"><td class="memItemLeft" align="right" valign="top"><a id="a9c15f1a5c018e1ee09d530846351fc69"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_x_job_status</b></td></tr>
+<tr class="separator:a9c15f1a5c018e1ee09d530846351fc69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a604788c27e01d19758a30634d29e6372"><td class="memItemLeft" align="right" valign="top"><a id="a604788c27e01d19758a30634d29e6372"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_y_job_status</b></td></tr>
+<tr class="separator:a604788c27e01d19758a30634d29e6372"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adebe6a778e744913bc6851719f4cbd1f"><td class="memItemLeft" align="right" valign="top"><a id="adebe6a778e744913bc6851719f4cbd1f"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_z_job_status</b></td></tr>
+<tr class="separator:adebe6a778e744913bc6851719f4cbd1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af480a577b3a9a51577f81c8e98d6e11e"><td class="memItemLeft" align="right" valign="top"><a id="af480a577b3a9a51577f81c8e98d6e11e"></a>
+Share&lt; uint16_t &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>share_gripper_job_status</b></td></tr>
+<tr class="separator:af480a577b3a9a51577f81c8e98d6e11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains a simple test program with which C++ for the STM32 using Arduino is tested along with various other tools such as Doxygen and Git.</p>
-<dl class="section author"><dt>Author</dt><dd>Ashley Humpal </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2021-19-Oct </dd></dl>
+<div class="textblock"><p>This file contains the controller and motor tasks needed to operate the claw machine. The motor tasks are for the X axis, Y axis, Z axis, and for the gripper. The controller tasks reads the user input and sends it to the motor tasks.</p>
+<dl class="section author"><dt>Author</dt><dd>Ashley Humpal and Michael Yiu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-01-Dec </dd></dl>
 </div><h2 class="groupheader">Function Documentation</h2>
 <a id="a4fc01d736fe50cf5b977f755b675f11d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a4fc01d736fe50cf5b977f755b675f11d">&#9670;&nbsp;</a></span>setup()</h2>
@@ -116,7 +152,6 @@ void&#160;</td><td class="memItemRight" valign="bottom"><b>loop</b> ()</td></tr>
         <tr>
           <td class="memname">void setup </td>
           <td>(</td>
-          <td class="paramtype">void&#160;</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>

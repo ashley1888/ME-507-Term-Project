@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['task_5fcontrol_46',['task_control',['../controller__task_8cpp.html#a1c626f59becb67075cd4a0c92eb6c4b1',1,'controller_task.cpp']]],
-  ['task_5fread_5fencoders_47',['task_read_encoders',['../encoder__task_8cpp.html#afcaa41270764102fa632a945b67eff42',1,'encoder_task.cpp']]]
+  ['resume_56',['resume',['../class_s_t_m32_encoder.html#ab9133c7ac41f4ca78b59947dce1070a8',1,'STM32Encoder']]]
 ];

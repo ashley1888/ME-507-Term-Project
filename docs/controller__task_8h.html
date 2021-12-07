@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.20"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>Clawmachine: src/controller_task.h File Reference</title>
+<title>Claw Machine: src/controller_task.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -25,10 +25,10 @@
  <tbody>
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
-   <div id="projectname">Clawmachine
+   <div id="projectname">Claw Machine
    &#160;<span id="projectnumber">1.01</span>
    </div>
-   <div id="projectbrief">ME 507 Term Project</div>
+   <div id="projectbrief">A 3-axis claw machine</div>
   </td>
  </tr>
  </tbody>
@@ -94,16 +94,42 @@ $(document).ready(function(){initNavTree('controller__task_8h.html',''); initRes
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aeae51a3510815b3e242e070b6c63e3ea"><td class="memItemLeft" align="right" valign="top"><a id="aeae51a3510815b3e242e070b6c63e3ea"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>controller_task</b> (void *p_params)</td></tr>
-<tr class="separator:aeae51a3510815b3e242e070b6c63e3ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a74b64ac7c32e03d8bc92f15573618b3b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="controller__task_8h.html#a74b64ac7c32e03d8bc92f15573618b3b">task_controller</a> (void *p_params)</td></tr>
+<tr class="memdesc:a74b64ac7c32e03d8bc92f15573618b3b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Task which reads the user's input and appropriately stores it into a position shared variable.  <a href="controller__task_8h.html#a74b64ac7c32e03d8bc92f15573618b3b">More...</a><br /></td></tr>
+<tr class="separator:a74b64ac7c32e03d8bc92f15573618b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p>This file contains code for a task which records data somewhat quickly.</p>
-<dl class="section author"><dt>Author</dt><dd>JR Ridgely </dd></dl>
-<dl class="section date"><dt>Date</dt><dd>2021-Oct-23 Original file </dd></dl>
-<dl class="section copyright"><dt>Copyright</dt><dd>(c) 2021 by JR Ridgely, released under the LGPL 3.0. </dd></dl>
-</div></div><!-- contents -->
+<div class="textblock"><p>This file contains the header for a file which reads the user's input and stores it into shared variables.</p>
+<dl class="section author"><dt>Author</dt><dd>Ashley Humpal and Michael Yiu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-Dec-06 </dd></dl>
+</div><h2 class="groupheader">Function Documentation</h2>
+<a id="a74b64ac7c32e03d8bc92f15573618b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74b64ac7c32e03d8bc92f15573618b3b">&#9670;&nbsp;</a></span>task_controller()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void task_controller </td>
+          <td>(</td>
+          <td class="paramtype">void *&#160;</td>
+          <td class="paramname"><em>p_params</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Task which reads the user's input and appropriately stores it into a position shared variable. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">p_params</td><td>A pointer, which is ignored, to no parameters </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
