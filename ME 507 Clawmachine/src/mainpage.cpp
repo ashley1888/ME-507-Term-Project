@@ -20,7 +20,7 @@
  *  @page page_diagrams Task Diagram
  *  @section sec_diagram Task Diagram
  *  Below is an image of the task diagram used for this project
- *  @image html hw0statediagram.jpg "Figure 1: Claw Machine Task Diagram" width=75%
+ *  @image html taskdiagram.png "Figure 1: Claw Machine Task Diagram" width=75%
  * 
  *  @page page_control Controller Task
  *  @section sec_control Controller Task
