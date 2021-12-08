@@ -4,6 +4,8 @@
  * 
  *  @section page_intro Introduction
  * 
+ *  @image html isometric_view.png "Claw Machine Isometric View" width=75%
+ * 
  *  This website contains all relevant software information concerning our ME 507 Term project the Claw Machine.
  *  At a high level what occurs in our project is that the controller task reads the user’s input position and sends that location to the x and y-motor tasks.
  *  After reading the position, the two x and y-motors actuate and continue to rotate until the encoder indicates that they have reached the correct position, 
@@ -73,10 +75,20 @@
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp
  *  @page page_3D 3D Printed Parts
  *  @section sec_3D 3D Printed Parts
- *    awdadadwadawdwadaThis file contains the implementation of the x-motor task.
- *    It waits for the user to give it a reference position value,
- *    which is obtained from the controller task. Once a value has
- *    been obtained, the motor powers on and only turns off once the
- *    encoder is within 50 ticks of the destination.
- *    It's source code can be found at: 
+ *    Seven 3D printed parts were originally designed and created for this project.
+ *    An image of each of them can be seen below.
+ *    @image html belt_clamp.png "Part 1: X-axis Belt Clamp" width=75%
+ *    @image html linear_rod_support.png "Part 2: Linear Rod Support Belt Holder" width=75%
+ *    @image html shaft_support_to_linear_bearing.png "Part 3: Shaft Support to Linear Bearing" width=75%
+ *    @image html belt_holder.png "Part 4: Y-axis Belt Clamp" width=75%
+ *    @image html x_motor_support.png "Part 5: X-motor Support" width=75%
+ *    @image html z_motor_support.png "Part 6: Z-motor Support" width=75%
+ *    @image html lead_screw_to_gripper.png "Part 7: Gripper-motor and Gripper Support" width=75%
+ * 
+ *    The gripper used for this project was not originally created, it was found 
+ *    off GrabCAD, and open-source CAD library. Below is an image of the gripper.
+ *    @image html gripper.png "Gripper Model" width=75%
+ * 
+ *    This particular gripper was designed by Avinash Bhashkar, and its source can be found at:
+ *    @c https://grabcad.com/library/robotic-gripper-and-end-effector-1
  */
