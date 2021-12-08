@@ -88,19 +88,19 @@ $(document).ready(function(){initNavTree('page_motor.html',''); initResizable();
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="sec_x"></a>
 X-Motor Task</h1>
-<p >This file contains the implementation of the x-motor task. It waits for the user to give it a reference position value, which is obtained from the controller task. Once a value has been obtained, the motor powers on and only turns off once the encoder is within 50 ticks of the destination. It's source code can be found at:</p>
+<p >This task for the user to give it a reference x-position value, which is obtained from the controller task. Once a value has been obtained, the motor powers on and only turns off once the encoder is within 50 ticks of the destination. It's source code can be found at:</p>
 <p ><code><a href="https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/X_Motor_Task.cpp">https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/X_Motor_Task.cpp</a></code> </p>
 <h1><a class="anchor" id="sec_y"></a>
 Y-Motor Task</h1>
-<p >This file contains the implementation of the y-motor task. It waits for the user to give it a refernce position value, which is obtained from the controller task. Once a value has been obtained, the motor powers on and only turns off once the encoder is within 50 ticks of the destination. It's source code can be found at:</p>
+<p >This task waits for the user to give it a refernce y-position value, which is obtained from the controller task. Once a value has been obtained, the motor powers on and only turns off once the encoder is within 50 ticks of the destination. It's source code can be found at:</p>
 <p ><code><a href="https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Y_Motor_Task.cpp">https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Y_Motor_Task.cpp</a></code> </p>
 <h1><a class="anchor" id="sec_z"></a>
 Z-Motor Task</h1>
-<p >This file contains the implementation of the z-motor task. It turns only runs once the x and y-tasks have indicated that they have been completed. The z-motors will turn off once the specific length of time has elapsed. It's source code can be found at:</p>
+<p >This task only runs once the x and y-tasks have indicated that they have been completed. The z-motors will turn off once the specific length of time has elapsed. It's source code can be found at:</p>
 <p ><code><a href="https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Z_Motor_Task.cpp">https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Z_Motor_Task.cpp</a></code> </p>
 <h1><a class="anchor" id="sec_gripper"></a>
 Gripper-Motor Task</h1>
-<p >This file contains the implementation of the gripper-motor task. It turns only runs once the z-tasks has indicated that it has completed. The gripper-motors will turn on for a specified length of time to grasp an object, then wait a different specified length of time before releasing it. It's source code can be found at:</p>
+<p >This task only runs once the z-tasks has indicated that it has completed. The gripper-motors will turn on for a specified length of time to grasp an object, then wait a different specified length of time before releasing it. It's source code can be found at:</p>
 <p ><code><a href="https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp">https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp</a></code> </p>
 </div></div><!-- contents -->
 </div><!-- PageDoc -->

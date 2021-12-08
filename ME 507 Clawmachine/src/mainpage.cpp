@@ -26,7 +26,7 @@
  * 
  *  @page page_control Controller Task
  *  @section sec_control Controller Task
- *    This file is the controller task of the claw machine. 
+ *    This task is the controller task of the claw machine. 
  *    It has the user enter a value between 1 and 64, where
  *    each value represents a position on an 8x8 chessboard.
  *    Once a value has been entered, the controller task sends
@@ -39,8 +39,7 @@
  * 
  *  @page page_motor Motor Tasks
  *  @section sec_x X-Motor Task
- *     This file contains the implementation of the x-motor task.
- *    It waits for the user to give it a reference position value,
+ *    This task for the user to give it a reference x-position value,
  *    which is obtained from the controller task. Once a value has
  *    been obtained, the motor powers on and only turns off once the
  *    encoder is within 50 ticks of the destination.
@@ -48,8 +47,7 @@
  * 
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/X_Motor_Task.cpp
  *  @section sec_y Y-Motor Task
- *    This file contains the implementation of the y-motor task.
- *    It waits for the user to give it a refernce position value,
+ *    This task waits for the user to give it a refernce y-position value,
  *    which is obtained from the controller task. Once a value has
  *    been obtained, the motor powers on and only turns off once the
  *    encoder is within 50 ticks of the destination.
@@ -57,16 +55,14 @@
  * 
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Y_Motor_Task.cpp
  *  @section sec_z Z-Motor Task
- *    This file contains the implementation of the z-motor task. 
- *    It turns only runs once the x and y-tasks have indicated that
+ *    This task only runs once the x and y-tasks have indicated that
  *    they have been completed. The z-motors will turn off once the
  *    specific length of time has elapsed.
  *    It's source code can be found at: 
  * 
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Z_Motor_Task.cpp
  *  @section sec_gripper Gripper-Motor Task
- *    This file contains the implementation of the gripper-motor task. 
- *    It turns only runs once the z-tasks has indicated that
+ *    This task only runs once the z-tasks has indicated that
  *    it has completed. The gripper-motors will turn on for a
  *    specified length of time to grasp an object, then wait a
  *    different specified length of time before releasing it.
