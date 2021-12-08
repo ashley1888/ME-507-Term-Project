@@ -17,7 +17,7 @@
  *  @author Ashley Humpal and Michael Yiu
  *  @date 2021-01-Dec
  * 
- *  @page page_diagrams Task Diagram
+ *  @page page_diagram Task Diagram
  *  @section sec_diagram Task Diagram
  *  Below is an image of the task diagram used for this project
  *  @image html taskdiagram.png "Figure 1: Claw Machine Task Diagram" width=75%
