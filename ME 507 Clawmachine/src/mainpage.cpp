@@ -25,7 +25,7 @@
  *  @page page_code Motor Tasks
  *  @section sec_x X-Motor Task
 *     This file contains the implementation of the x-motor task.
- *    It waits for the user to give it a refernce position value,
+ *    It waits for the user to give it a reference position value,
  *    which is obtained from the controller task. Once a value has
  *    been obtained, the motor powers on and only turns off once the
  *    encoder is within 50 ticks of the destination.
