@@ -24,16 +24,19 @@
 */
 var NAVTREE =
 [
-  [ "Claw Machine", "index.html", [
+  [ "ME 507 Term Project: Claw Machine", "index.html", [
     [ "Introduction", "index.html#page_intro", null ],
     [ "Task Diagram", "page_diagrams.html", [
       [ "Task Diagram", "page_diagrams.html#sec_diagram", null ]
     ] ],
-    [ "Motor Tasks", "page_code.html", [
-      [ "X-Motor Task", "page_code.html#sec_x", null ],
-      [ "Y-Motor Task", "page_code.html#sec_y", null ],
-      [ "Z-Motor Task", "page_code.html#sec_z", null ],
-      [ "Gripper-Motor Task", "page_code.html#sec_gripper", null ]
+    [ "Controller Task", "page_control.html", [
+      [ "Controller Task", "page_control.html#sec_control", null ]
+    ] ],
+    [ "Motor Tasks", "page_motor.html", [
+      [ "X-Motor Task", "page_motor.html#sec_x", null ],
+      [ "Y-Motor Task", "page_motor.html#sec_y", null ],
+      [ "Z-Motor Task", "page_motor.html#sec_z", null ],
+      [ "Gripper-Motor Task", "page_motor.html#sec_gripper", null ]
     ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],

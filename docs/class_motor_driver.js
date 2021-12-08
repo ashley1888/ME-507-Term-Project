@@ -7,6 +7,5 @@ var class_motor_driver =
     [ "setduty", "class_motor_driver.html#a04694ff3fb9be1929a4120712ecb6972", null ],
     [ "_nfault", "class_motor_driver.html#ac2b519ef4db54c23f290f93096247fcc", null ],
     [ "_nsleep", "class_motor_driver.html#a80612ae2d978cb23a208bc0e6f4327d4", null ],
-    [ "_pin1", "class_motor_driver.html#ac545b59862dee155ba253e3d4537fba9", null ],
-    [ "_pin2", "class_motor_driver.html#a2c2e251d491c44c1fd1276926c00803c", null ]
+    [ "_pin1", "class_motor_driver.html#ac545b59862dee155ba253e3d4537fba9", null ]
 ];

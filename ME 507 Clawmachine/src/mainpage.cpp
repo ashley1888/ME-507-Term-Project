@@ -37,7 +37,7 @@
  * 
  *  @page page_motor Motor Tasks
  *  @section sec_x X-Motor Task
-*     This file contains the implementation of the x-motor task.
+ *     This file contains the implementation of the x-motor task.
  *    It waits for the user to give it a reference position value,
  *    which is obtained from the controller task. Once a value has
  *    been obtained, the motor powers on and only turns off once the
@@ -71,4 +71,12 @@
  *    It's source code can be found at: 
  * 
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp
-*/
+ *  @page page_motor Motor Tasks
+ *  @section sec_x X-Motor Task
+ *     This file contains the implementation of the x-motor task.
+ *    It waits for the user to give it a reference position value,
+ *    which is obtained from the controller task. Once a value has
+ *    been obtained, the motor powers on and only turns off once the
+ *    encoder is within 50 ticks of the destination.
+ *    It's source code can be found at: 
+ */
