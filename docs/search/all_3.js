@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['enable_0',['enable',['../class_motor_driver.html#a191bb963050625ef0c43344476803d9e',1,'MotorDriver']]],
-  ['encoder_5fcounter_2ecpp_1',['encoder_counter.cpp',['../encoder__counter_8cpp.html',1,'']]],
-  ['encoder_5fcounter_2eh_2',['encoder_counter.h',['../encoder__counter_8h.html',1,'']]]
+  ['disable_0',['disable',['../class_motor_driver.html#ab7ef925c94ac19ccec5e6f7cd3d372d2',1,'MotorDriver']]]
 ];

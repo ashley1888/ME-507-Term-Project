@@ -71,7 +71,7 @@
  *    It's source code can be found at: 
  * 
  *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp
- *  @page page_3D
+ *  @page page_3D 3D Printed Parts
  *  @section sec_3D 3D Printed Parts
  *    awdadadwadawdwadaThis file contains the implementation of the x-motor task.
  *    It waits for the user to give it a reference position value,

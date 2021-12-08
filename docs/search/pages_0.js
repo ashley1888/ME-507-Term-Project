@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['controller_20task_0',['Controller Task',['../page_control.html',1,'']]]
+  ['3d_20printed_20parts_0',['3D Printed Parts',['../page_3_d.html',1,'']]]
 ];

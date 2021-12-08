@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['page_5f3d_0',['page_3D',['../page_3_d.html',1,'']]]
+  ['me_20507_20term_20project_3a_20claw_20machine_0',['ME 507 Term Project: Claw Machine',['../index.html',1,'']]],
+  ['motor_20tasks_1',['Motor Tasks',['../page_motor.html',1,'']]]
 ];
