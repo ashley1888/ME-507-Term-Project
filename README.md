@@ -1,6 +1,8 @@
 # ME-507-Term-Project
 Claw Machine by
+
 Michael Yiu and Ashley Humpal
+
 Fall 2021
 
 The code in this repository aims to control a claw machine and have it go to a destination and pick up objects.
