@@ -1,17 +1,26 @@
 # ME-507-Term-Project
+Claw Machine by
+Michael Yiu and Ashley Humpal
+Fall 2021
 
-ME507 Class Support Programs
-The code in this repository is here to support the ME507 mechatronics course at California Polytechnic State University, San Luis Obispo. If anyone else would like to use it, please do; we make it available under a GPL license.
+The code in this repository aims to control a claw machine and have it go to a destination and pick up objects.
 
-We have code which makes multitasking programs a bit easier to write using FreeRTOS on either STM32 or ESP32 processors:
+This repository contains:
+controller_task.cpp*
+controller_task.h*
+X_Motor_task.cpp*
+X_Motor_task.h*
+Y_Motor_task.cpp*
+Y_Motor_task.h*
+Z_Motor_task.cpp*
+Z_Motor_task.h*
+Gripper_Motor_task.cpp*
+Gripper_Motor_task.h*
+shares.h*
+main.cpp*
 
-baseshare.*
-taskshare.h
-taskqueue.h
-The examples main.cpp and task_receive.*
-There are also some utility classes, such as a class that allows incremental encoders to be used with the encoder reading hardware in the timers of STM32's (this seems not to be readily available from other sources). The encoder counter code is new, pre-alpha, barely tested, and only known to run on STM32L476RG processors, but hopefully it will work on others.
+Encoder driver files were provided by our professor, Dr. Ridgely and their source code can be found at:
+https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp
+https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.h
 
-encoder_counter.*
-The example encoder_test.cpp
-Documentation
-The author didn't write all those Doxygen comments for nothing. Have a look: https://spluttflob.github.io/ME507-Support/
+Each file contains doxygen style documentation.
