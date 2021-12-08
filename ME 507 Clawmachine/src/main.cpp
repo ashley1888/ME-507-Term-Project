@@ -47,7 +47,7 @@ void setup()
               "Control",          // Name in diagnostic printouts
               1000,               // Stack size in bytes
               NULL,               // Parameters for task function
-              1,                  // Task priority
+              2,                  // Task priority
               NULL);              // Handle to task struct
   xTaskCreate(task_x_motor,       // Task function
               "X_Motor",          // Name in diagnostic printouts

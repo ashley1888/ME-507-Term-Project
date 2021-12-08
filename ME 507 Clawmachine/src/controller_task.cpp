@@ -1,6 +1,11 @@
 /** @file controller_task.cpp
- *    This file contains code for a file which reads the user's position input and stores it into shared variables, 
- *    as well as reading shared variables from other files. 
+ *    This file is the controller task of the claw machine. 
+ *    It has the user enter a value between 1 and 64, where
+ *    each value represents a position on an 8x8 chessboard.
+ *    Once a value has been entered, the controller task sends
+ *    the responding x and y-values to the x and y-motors. The
+ *    purpose of the value is so that the motor encoders know
+ *    when they have reached their destination.
  * 
  *  @author Ashley Humpal and Michael Yiu 
  *  @date   2021-Dec-06 
@@ -12,8 +17,13 @@
 #include "controller_task.h"
 #include "shares.h"
 
-/** @brief   Task which reads the user's input and appropriately stores it into a position
- *           shared variable.
+/** @brief   Task which reads the user's input sends the appropriate
+ *           values through shared variables.
+ *  @details Assigns an x and y-position to every square of an 8x8
+ *           chessboard and sends the appropriate value depending
+ *           on the user's input. When the other tasks are running,
+ *           this task will wait until they send back a "done" 
+ *           indicator, forcing the user to wait until then.
  *  @param   p_params A pointer, which is ignored, to no parameters
  */
 void task_controller(void *p_params)
@@ -28,7 +38,6 @@ void task_controller(void *p_params)
     {
         if (x_task_done && y_task_done && z_task_done && gripper_task_done) // Checks if all motor tasks are completed 
         {
-            //if (1) 
             if Serial.available() > 0) // Checks whether user has input anything to the serial monitor 
             {
                 uint16_t numberval = Serial.parseInt(); // Reads user input integer values
@@ -383,16 +392,13 @@ void task_controller(void *p_params)
                 y_task_done = 0;
                 z_task_done = 0;
                 gripper_task_done = 0;
-
-                // Testing code 
-                //share_x_position.put(5000); 
-                //share_y_position.put(5000);
             }
-            share_x_job_status.get(x_task_done); // Get shared variable representing status of X_Motor_Task
-            share_y_job_status.get(y_task_done); // Get shared variable representing status of Y_Motor_Task
-            share_z_job_status.get(z_task_done); // Get shared variable representing status of Z_Motor_Task
-            share_gripper_job_status.get(gripper_task_done); // Get shared variable representing status of Gripper_Motor_Task
         }
+        // Check if the other tasks are done every 10 ms
+        share_x_job_status.get(x_task_done); // Get shared variable representing status of X_Motor_Task
+        share_y_job_status.get(y_task_done); // Get shared variable representing status of Y_Motor_Task
+        share_z_job_status.get(z_task_done); // Get shared variable representing status of Z_Motor_Task
+        share_gripper_job_status.get(gripper_task_done); // Get shared variable representing status of Gripper_Motor_Task
         vTaskDelay (10);
     }
 }

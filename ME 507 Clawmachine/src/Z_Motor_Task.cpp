@@ -1,6 +1,8 @@
 /** @file Z_Motor_Task.cpp
- *    This file contains the code for the motor operating in the z direction. It uses the 
- *    motor driver to spin. 
+ *    This file contains the implementation of the z-motor task. 
+ *    It turns only runs once the x and y-tasks have indicated that
+ *    they have been completed. The z-motors will turn off once the
+ *    specific length of time has elapsed.
  *
  *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01
@@ -14,11 +16,20 @@
 #include "motor_driver.h"
 #include "Z_Motor_Task.h"
 
+/** @brief   Z-motor task
+ *  @details Turns on the z-motor once the x and y-motor tasks
+ *           have been completed. The z-motor will turn on for
+ *           a specified length of time, send an indication
+ *           to the gripper motor that the task was complete, and
+ *           then turn off the motor.
+ * 
+ *  @param   p_params A pointer, which is ignored, to no parameters
+ */
 void task_z_motor(void *p_params)
 {
-  Serial << "Initializing Z motor...";
-  MotorDriver Z_motor(PB9, PB8, PB3, PA10); // Creating motor object
-  Serial << "done." << endl;
+  // Serial << "Initializing Z motor...";
+  MotorDriver Z_motor(PB9, PB8, PB3, PA10); // Creating z-motor object
+  // Serial << "done." << endl;
 
   Z_motor.enable(); // Turn on motor
 
@@ -26,6 +37,7 @@ void task_z_motor(void *p_params)
 
   for (;;)
   {
+    // Queues allow for blocking of the rest of the code until the x and y-tasks are completed.
     queue_x_task.get(); // Gets x task value from queue 
     queue_y_task.get(); // Gets y task value from queue 
     

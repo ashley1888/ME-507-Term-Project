@@ -1,5 +1,5 @@
 /** @file X_Motor_Task.h
- *  This file contains a header for the motor task operating in the x direction.
+ *  This file contains a header for the x-motor task.
  * 
  *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01

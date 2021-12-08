@@ -1,5 +1,5 @@
 /** @file Z_Motor_Task.h
- *  This file contains a header for the motor task operating in the z direction.
+ *  This file contains a header for the z-motor task.
  * 
  *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01

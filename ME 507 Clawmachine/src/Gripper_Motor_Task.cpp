@@ -1,6 +1,9 @@
 /** @file Gripper_Motor_Task.cpp
- *    This file contains the code for the motor operating the gripper. It waits for a queue value to begin closing
- *    and then waits a duration before reversing and opening the claw.
+ *    This file contains the implementation of the gripper-motor task. 
+ *    It turns only runs once the z-tasks has indicated that
+ *    it has completed. The gripper-motors will turn on for a
+ *    specified length of time to grasp an object, then wait a
+ *    different specified length of time before releasing it.
  *
  *  @author Michael Yiu and Ashley Humpal
  *  @date   2021-Dec-01
@@ -14,6 +17,15 @@
 #include "motor_driver.h"
 #include "Gripper_Motor_Task.h"
 
+/** @brief   Gripper-motor task
+ *  @details Turns on the gripper-motor once the z-motor tasks
+ *           has completed. The gripper-motor will turn on for
+ *           a specified length of time, wait a different length
+ *           of time, then turn off the motor and indicate that
+ *           the task has been completed.
+ * 
+ *  @param   p_params A pointer, which is ignored, to no parameters
+ */
 void task_gripper_motor(void *p_params)
 {
   MotorDriver Gripper_motor(PB6, PA5, PB3, PA10); // Creating motor object

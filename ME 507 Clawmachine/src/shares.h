@@ -1,5 +1,7 @@
 /** @file shares.h
- *  This file contains extern declarations of shares and queues.
+ *  This file contains extern declarations of shares and queues for the
+ *  claw machine. Since there are many tasks involved, many instances
+ *  of the share and queue variables must be created.
  *
  *  @author Ashley Humpal and Michael Yiu
  *  @date   2021-Dec-06

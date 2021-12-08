@@ -27,9 +27,7 @@ MotorDriver::MotorDriver (uint8_t pin1, uint8_t pin2, uint8_t nsleep, uint8_t nf
     pinMode(_pin2, OUTPUT); 
     pinMode(_nsleep, OUTPUT); 
     pinMode(nfault, INPUT_PULLUP); 
-    
 }
-
 
 /** @brief   Method to detect if motor has faulted.
  *  @details Takes no parameters in and turns off motor if fault detected.
@@ -42,7 +40,6 @@ void MotorDriver::faulted (void)
         }
 }
 
-
 /** @brief   Method to turn on motor.
  *  @details Takes no parameters in and sets pin high.
  */
@@ -51,7 +48,6 @@ void MotorDriver::enable (void)
      digitalWrite(_nsleep, HIGH); // Set pin high to turn on motor
 }
 
-
 /** @brief   Method to turn off motor.
  *  @details Takes no parameters in and sets pin low.
  */
@@ -59,7 +55,6 @@ void MotorDriver::disable (void)
 {   
     digitalWrite(_nsleep, LOW); // Set pin low to turn off motor
 }
-
 
 /** @brief   Method to set motor duty cycle.
  *  @details Accounts for range of duty cycle values.
