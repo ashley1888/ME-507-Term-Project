@@ -33,7 +33,7 @@
  *    when they have reached their destination.
  *    It's source code can be found at: 
  * 
- *    (replace with source code url)
+ *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/controller_task.cpp
  * 
  *  @page page_motor Motor Tasks
  *  @section sec_x X-Motor Task
@@ -44,7 +44,7 @@
  *    encoder is within 50 ticks of the destination.
  *    It's source code can be found at: 
  * 
- *    (replace with source code url)
+ *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/X_Motor_Task.cpp
  *  @section sec_y Y-Motor Task
  *    This file contains the implementation of the y-motor task.
  *    It waits for the user to give it a refernce position value,
@@ -53,7 +53,7 @@
  *    encoder is within 50 ticks of the destination.
  *    It's source code can be found at: 
  * 
- *    (replace with source code url)
+ *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Y_Motor_Task.cpp
  *  @section sec_z Z-Motor Task
  *    This file contains the implementation of the z-motor task. 
  *    It turns only runs once the x and y-tasks have indicated that
@@ -61,7 +61,7 @@
  *    specific length of time has elapsed.
  *    It's source code can be found at: 
  * 
- *    (replace with source code url)
+ *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Z_Motor_Task.cpp
  *  @section sec_gripper Gripper-Motor Task
  *    This file contains the implementation of the gripper-motor task. 
  *    It turns only runs once the z-tasks has indicated that
@@ -70,5 +70,5 @@
  *    different specified length of time before releasing it.
  *    It's source code can be found at: 
  * 
- *    (replace with source code url)
+ *    @c https://github.com/ashley1888/ME-507-Term-Project/blob/main/ME%20507%20Clawmachine/src/Gripper_Motor_Task.cpp
 */
