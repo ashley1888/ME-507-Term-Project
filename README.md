@@ -16,6 +16,8 @@ Z_Motor_task.cpp*
 Z_Motor_task.h*
 Gripper_Motor_task.cpp*
 Gripper_Motor_task.h*
+motor_driver.cpp*
+motor_driver.h*
 shares.h*
 main.cpp*
 
