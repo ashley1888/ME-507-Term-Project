@@ -38,6 +38,9 @@ var NAVTREE =
       [ "Z-Motor Task", "page_motor.html#sec_z", null ],
       [ "Gripper-Motor Task", "page_motor.html#sec_gripper", null ]
     ] ],
+    [ "page_3D", "page_3_d.html", [
+      [ "3D Printed Parts", "page_3_d.html#sec_3D", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
