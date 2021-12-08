@@ -26,6 +26,15 @@ var NAVTREE =
 [
   [ "Claw Machine", "index.html", [
     [ "Introduction", "index.html#page_intro", null ],
+    [ "Task Diagram", "page_diagrams.html", [
+      [ "Task Diagram", "page_diagrams.html#sec_diagram", null ]
+    ] ],
+    [ "Motor Tasks", "page_code.html", [
+      [ "X-Motor Task", "page_code.html#sec_x", null ],
+      [ "Y-Motor Task", "page_code.html#sec_y", null ],
+      [ "Z-Motor Task", "page_code.html#sec_z", null ],
+      [ "Gripper-Motor Task", "page_code.html#sec_gripper", null ]
+    ] ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
