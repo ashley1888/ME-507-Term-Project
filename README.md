@@ -6,10 +6,9 @@ Fall 2021
 The code in this repository aims to control a claw machine and have it go to a destination and pick up objects.
 
 This repository contains:
+
 controller_task.cpp
-
 controller_task.h
-
 X_Motor_task.cpp
 
 X_Motor_task.h
