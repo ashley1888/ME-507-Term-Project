@@ -26,8 +26,8 @@ var NAVTREE =
 [
   [ "ME 507 Term Project: Claw Machine", "index.html", [
     [ "Introduction", "index.html#page_intro", null ],
-    [ "Task Diagram", "page_diagrams.html", [
-      [ "Task Diagram", "page_diagrams.html#sec_diagram", null ]
+    [ "Task Diagram", "page_diagram.html", [
+      [ "Task Diagram", "page_diagram.html#sec_diagram", null ]
     ] ],
     [ "Controller Task", "page_control.html", [
       [ "Controller Task", "page_control.html#sec_control", null ]
