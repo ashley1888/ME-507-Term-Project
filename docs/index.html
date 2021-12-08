@@ -28,7 +28,7 @@
    <div id="projectname">Claw Machine
    &#160;<span id="projectnumber">1.01</span>
    </div>
-   <div id="projectbrief">A 3-axis claw machine</div>
+   <div id="projectbrief">ME 507 Term Project</div>
   </td>
  </tr>
  </tbody>
@@ -82,11 +82,18 @@ $(document).ready(function(){initNavTree('index.html',''); initResizable(); });
 </iframe>
 </div>
 
-<div class="header">
+<div class="PageDoc"><div class="header">
   <div class="headertitle">
 <div class="title">Claw Machine Documentation</div>  </div>
 </div><!--header-->
 <div class="contents">
+<div class="textblock"><h1><a class="anchor" id="page_intro"></a>
+Introduction</h1>
+<p>This website contains all relevant software information concerning our ME 507 Term project the Claw Machine. At a high level what occurs in our project is that the controller task reads the user’s input position and sends that location to the x and y-motor tasks. After reading the position, the two x and y-motors actuate and continue to rotate until the encoder indicates that they have reached the correct position, to a certain allowable tolerance. Once the correct x and y-positions have been reached, the z-motor activates for a predetermined length of time, descending the gripper. When the end effector reaches its destination, the gripper-motor actuates for a different predetermined length of time to close and grasps the object.</p>
+<p>The encoder driver files were supplied by our professor, Dr. Ridgely and their source code can be found at: <code><a href="https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp">https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp</a></code> <code><a href="https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.h">https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.h</a></code> </p>
+<dl class="section author"><dt>Author</dt><dd>Ashley Humpal and Michael Yiu </dd></dl>
+<dl class="section date"><dt>Date</dt><dd>2021-01-Dec </dd></dl>
+</div></div><!-- PageDoc -->
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

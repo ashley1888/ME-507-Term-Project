@@ -10,7 +10,9 @@
  *  to a certain allowable tolerance. Once the correct x and y-positions have been reached, the z-motor activates for a predetermined length of time, descending the gripper. 
  *  When the end effector reaches its destination, the gripper-motor actuates for a different predetermined length of time to close and grasps the object.
  * 
- *  The encoder driver file was supplied by our professor, Dr. Ridgely and its documentation can be found at: 
+ *  The encoder driver files were supplied by our professor, Dr. Ridgely and their source code can be found at: 
+ * @c https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.cpp
+ * @c https://github.com/spluttflob/ME507-Support/blob/master/examples/encoder_counter.h
  * 
  *  @author Ashley Humpal and Michael Yiu
  *  @date 2021-01-Dec

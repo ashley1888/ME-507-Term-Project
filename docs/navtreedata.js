@@ -25,6 +25,7 @@
 var NAVTREE =
 [
   [ "Claw Machine", "index.html", [
+    [ "Introduction", "index.html#page_intro", null ],
     [ "Classes", "annotated.html", [
       [ "Class List", "annotated.html", "annotated_dup" ],
       [ "Class Index", "classes.html", null ],
