@@ -7,6 +7,8 @@ Fall 2021
 
 The code in this repository aims to control a claw machine and have it go to a destination and pick up objects.
 
+For formal documentation please refer to: https://ashley1888.github.io/ME-507-Term-Project/
+
 This repository contains:
 
 controller_task.cpp
